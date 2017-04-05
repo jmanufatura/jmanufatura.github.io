@@ -1,0 +1,35 @@
+$breakpoint1: 40rem;
+$breakpoint2: 64rem;
+$breakpoint3: 90rem;
+
+$defaultGutter: 1rem;
+
+$phoneGrid: 4;
+$phoneGutter: 1rem;
+$phoneWrapper: 100%;
+$phoneColumn: 100%/$phoneGrid;
+$phone: "all and (max-width: #{$breakpoint1})";
+
+$tabletGrid: 12;
+$tabletGutter: 1rem;
+$tabletWrapper: 83.33333%;
+$tabletColumn: 100%/$tabletGrid;
+$tablet: "all and (min-width: #{$breakpoint1 + 0.0625rem}) and (max-width: #{$breakpoint2})";
+$tabletUp: "all and (min-width: #{$breakpoint1 + 0.0625rem})";
+
+$mobile: "all and (max-width: #{$breakpoint2})";
+
+$desktopGrid: 12;
+$desktopGutter: 1rem;
+$desktopWrapper: 83.33333%;
+$desktopColumn: 100%/$desktopGrid;
+$desktop: "all and (min-width: #{$breakpoint2 + 0.0625rem}) and (max-width: #{$breakpoint3})";
+$desktopUp: "all and (min-width: #{$breakpoint2 + 0.0625rem})";
+
+$largeGrid: 12;
+$largeGutter: 1rem;
+$largeWrapper: 75%;
+$largeColumn: 100%/$largeGrid;
+$largeUp: "all and (min-width: #{$breakpoint3 + 0.0625rem})";
+
+$subgrid: 6;

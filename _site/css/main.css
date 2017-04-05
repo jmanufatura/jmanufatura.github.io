@@ -1,0 +1,273 @@
+html {
+  font-size: 150%; }
+
+a {
+  text-decoration: none;
+  color: unset; }
+
+iframe {
+  display: block; }
+
+@font-face {
+  font-family: 'HurmeGeometric';
+  src: url("/fonts/HurmeGeometricSans4-Bold.otf") format("opentype"); }
+body {
+  font-family: 'Questrial', sans-serif;
+  color: #002831; }
+
+.negativo h1, .negativo h2, .negativo h3, .negativo h4, .negativo h5, .negativo h6, .negativo label, .negativo p, .negativo figcaption, .negativo input, .negativo button, .negativo li, .negativo a {
+  color: #fff; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HurmeGeometric', sans-serif;
+  text-align: center;
+  color: #002831;
+  font-feature-settings: "swsh" 1; }
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: .5rem; }
+  @media all and (max-width: 64rem) {
+    h1 {
+      font-size: 1.5rem;
+      line-height: 2rem; } }
+
+h6 {
+  text-align: left; }
+
+label, p, figcaption, input, button, li {
+  font-family: 'Questrial', sans-serif;
+  color: #002831; }
+
+p {
+  font-size: .6rem;
+  line-height: 1rem; }
+
+.botao {
+  text-transform: uppercase;
+  font-size: .5rem;
+  letter-spacing: 1px;
+  line-height: 2rem; }
+
+#menu {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999; }
+  #menu .item {
+    cursor: pointer;
+    height: 2rem;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    text-align: center;
+    flex-grow: 1; }
+    #menu .item:hover {
+      background-color: #daebe3; }
+    #menu .item:first-child {
+      margin-left: .5rem; }
+    #menu .item:last-child {
+      margin-right: .5rem; }
+  #menu #botao-encomendar {
+    flex-grow: 1.5;
+    background-color: #fff1b6;
+    cursor: default; }
+    #menu #botao-encomendar:hover {
+      background-color: #fff1b6; }
+      #menu #botao-encomendar:hover #menu-dropdown {
+        display: flex; }
+  #menu #menu-dropdown {
+    display: none;
+    background-color: #fff1b6;
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    width: 100vw; }
+  #menu #vitrine {
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+  #menu .produto-thumb {
+    position: relative; }
+    #menu .produto-thumb figure {
+      padding-bottom: 66.666%;
+      background-color: #fff;
+      margin-bottom: .5rem; }
+    #menu .produto-thumb p {
+      line-height: 1rem;
+      font-size: .666666rem;
+      color: #002831;
+      font-family: 'HurmeGeometric', sans-serif;
+      font-feature-settings: "swsh" 1; }
+  #menu #ver-encomendas {
+    background-color: #fff;
+    border-bottom: 1px solid #f1ecf5;
+    cursor: pointer; }
+    #menu #ver-encomendas:hover {
+      background-color: #f1ecf5; }
+
+#botao-home {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  pointer-events: none;
+  align-items: flex-end; }
+  #botao-home .simbolo {
+    margin-bottom: 4rem;
+    pointer-events: all; }
+
+#capa-home, #historia, #produtos-capa, #eventos, #pontos-de-venda {
+  align-content: center;
+  justify-content: center; }
+  #capa-home h1, #historia h1, #produtos-capa h1, #eventos h1, #pontos-de-venda h1 {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
+    text-transform: uppercase;
+    font-size: .75rem;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1rem;
+    font-family: 'HurmeGeometric', sans-serif;
+    width: auto; }
+    @media all and (max-width: 64rem) {
+      #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
+        font-size: .5rem;
+        letter-spacing: 1px;
+        padding-left: 2rem;
+        padding-right: 2rem; } }
+
+#capa-home {
+  margin-top: 2rem;
+  position: relative;
+  max-height: calc(100vh - 4rem);
+  overflow: hidden; }
+
+#logo-capa-home {
+  position: absolute;
+  top: 2rem;
+  pointer-events: none; }
+  @media all and (min-width: 40.0625rem) and (max-width: 64rem) {
+    #logo-capa-home figure {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+
+#pascoa {
+  background-color: #f1ecf5;
+  line-height: 1rem;
+  font-size: .66666rem;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem; }
+
+#historia {
+  height: calc(100vh - 2rem);
+  background-image: url("/img/historia.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#produtos-capa {
+  height: calc(50vh - 1rem);
+  background-image: url("/img/produtos-capa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#produtos {
+  min-height: calc(50vh - 1rem);
+  background-color: #fff; }
+
+#eventos {
+  height: calc(100vh - 2rem);
+  background-image: url("/img/eventos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#pontos-de-venda {
+  height: calc(100vh - 2rem);
+  background-image: url("/img/pontos-de-venda.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#entregas {
+  min-height: calc(100vh - 2rem);
+  background-color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  #entregas h1 {
+    margin-bottom: 2rem; }
+  #entregas p {
+    margin-bottom: 1rem; }
+
+#verificar-entrega {
+  display: flex;
+  flex-wrap: nowrap; }
+  #verificar-entrega input, #verificar-entrega button {
+    height: 2rem;
+    line-height: 2rem; }
+  #verificar-entrega input {
+    width: 66.666%;
+    margin-right: 0;
+    border: 2px solid #daebe3;
+    font-size: .666rem;
+    padding-left: .5rem; }
+    #verificar-entrega input:focus {
+      outline-width: 0; }
+  #verificar-entrega button {
+    width: 33.333%;
+    margin-left: 0;
+    background-color: #daebe3; }
+
+#mapa {
+  padding-bottom: 33.333%;
+  background-color: #daebe3;
+  margin-bottom: 2rem;
+  border-left: 2px solid #daebe3;
+  border-bottom: 2px solid #daebe3;
+  border-right: 2px solid #daebe3;
+  background-image: url("/img/mapa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#despedida {
+  background-color: #daebe3;
+  text-align: center; }
+  #despedida p {
+    line-height: 2rem; }
+
+#info {
+  background-color: #f5e5e0;
+  padding-bottom: 3.5rem;
+  padding-top: 3rem; }
+  #info li {
+    list-style: none;
+    margin-bottom: .5rem; }
+  #info li, #info h6 {
+    line-height: 1rem;
+    font-size: .6rem; }
+    #info li a, #info h6 a {
+      text-transform: uppercase;
+      font-size: .5rem;
+      letter-spacing: 1px; }
+  @media all and (max-width: 40rem) {
+    #info {
+      padding-top: 1rem; } }
+
+@media all and (max-width: 40rem) {
+  #info li, #info h6 {
+    text-align: center; }
+  #info .contato {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #002831;
+    padding-bottom: 1rem; } }

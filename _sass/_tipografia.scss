@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'HurmeGeometric';
+  src:  url('/fonts/HurmeGeometricSans4-Bold.otf') format('opentype');
+}
+
+body {
+	font-family: 'Questrial', sans-serif;
+	color: $azul-escuro;
+}
+
+.negativo {
+	h1, h2, h3, h4, h5, h6, label, p, figcaption, input, button, li, a {
+		color: $branco;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'HurmeGeometric', sans-serif;
+	text-align: center;
+	color: $azul-escuro;
+	font-feature-settings: "swsh" 1;
+}
+
+h1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+	margin-bottom: .5rem;
+	@media #{$mobile} {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
+h6 {
+	text-align: left;
+}
+
+label, p, figcaption, input, button, li {
+	font-family: 'Questrial', sans-serif;
+	color: $azul-escuro;
+}
+
+p {
+	font-size: .6rem;
+	line-height: 1rem;
+}
+
+.botao {
+	text-transform: uppercase;
+	font-size: .5rem;
+	letter-spacing: 1px;
+	line-height: 2rem;
+}

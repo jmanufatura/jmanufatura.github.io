@@ -1,0 +1,25 @@
+---
+---
+
+@charset "utf-8";
+
+html {
+	font-size: 150%;
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+}
+
+iframe {
+	display: block;
+}
+
+@import
+	"variaveis",
+	"cores",
+	"tipografia",
+	"menu",
+	"home"
+;

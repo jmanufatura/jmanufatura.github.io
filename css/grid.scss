@@ -1,0 +1,486 @@
+---
+---
+
+@charset "utf-8";
+
+@import 'variaveis';
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+@mixin container {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+@mixin wrapper {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+	@media #{$phone} {
+		padding-left: $phoneGutter / 2;
+		padding-right: $phoneGutter / 2;
+	}
+	@media #{$tabletUp} {
+		$tabletPadding: ( 100% - $tabletWrapper ) / 2 ;
+		padding-left: calc(#{$tabletPadding} - #{$tabletGutter / 2});
+		padding-right: calc(#{$tabletPadding} - #{$tabletGutter / 2});
+	}
+	@media #{$desktopUp} {
+		$desktopPadding: ( 100% - $desktopWrapper ) / 2 ;
+		padding-left: calc(#{$desktopPadding} - #{$desktopGutter / 2});
+		padding-right: calc(#{$desktopPadding} - #{$desktopGutter / 2});
+	}
+	@media #{$largeUp} {
+		$largePadding: ( 100% - $largeWrapper ) / 2 ;
+		padding-left: calc(#{$largePadding} - #{$largeGutter / 2});
+		padding-right: calc(#{$largePadding} - #{$largeGutter / 2});
+	}
+}
+
+@mixin element {
+	@media #{$phone} {
+		width: calc(100% - #{$phoneGutter});
+		margin-left: $phoneGutter/2;
+		margin-right: $phoneGutter/2;
+	}
+	@media #{$tabletUp} {
+		width: calc(100% - #{$tabletGutter});
+		margin-left: $tabletGutter/2;
+		margin-right: $tabletGutter/2;
+	}
+	@media #{$desktopUp} {
+		width: calc(100% - #{$desktopGutter});
+		margin-left: $desktopGutter/2;
+		margin-right: $desktopGutter/2;
+	}
+	@media #{$largeUp} {
+		width: calc(100% - #{$largeGutter});
+		margin-left: $largeGutter/2;
+		margin-right: $largeGutter/2;
+	}
+}
+
+@mixin subwrapper {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+@mixin subelement {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.container, body, main {
+	@include container;
+}
+
+.wrapper {
+
+	@include wrapper;
+
+	article, form, fieldset,
+	datalist, select, optgroup,
+	nav, div, aside, ul, ol {
+		@include container;
+	}
+
+	section, main, footer, header {
+		section, main, footer, header {
+			@include container;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6, p, img, blockquote, audio,
+	video, hr, br, wbr, ul > *, ol > *, figure, dl, legend, input,
+	textarea, button, output, option, meter, progress {
+		@include element;
+		* {
+			@include subelement
+		}
+	}
+
+	.element {
+		@media #{$phone} {
+			margin-left: $phoneGutter/2;
+			margin-right: $phoneGutter/2;
+		}
+		@media #{$tabletUp} {
+			margin-left: $tabletGutter/2;
+			margin-right: $tabletGutter/2;
+		}
+		@media #{$desktopUp} {
+			margin-left: $desktopGutter/2;
+			margin-right: $desktopGutter/2;
+		}
+		@media #{$largeUp} {
+			margin-left: $largeGutter/2;
+			margin-right: $largeGutter/2;
+		}
+	}
+
+	@for $i from 1 through $subgrid {
+		.sub-#{$i} {
+			width: calc(100% - #{$defaultGutter});
+			margin-left: $defaultGutter/2;
+			margin-right: $defaultGutter/2;
+			@include subwrapper;
+			* {
+				@include subelement
+			}
+			> .subcol {
+		        width: calc(#{percentage(1/$i)} - #{($i - 1)*$defaultGutter/$i});
+		        margin-left: 0;
+				margin-right: 0;
+		    }
+		}
+	}
+
+	@media #{$phone} {
+		.phone-0 {
+			display: none;
+		}
+	}
+
+	@media #{$mobile} {
+		.mobile-0 {
+			display: none;
+		}
+	}
+
+	@media #{$tabletUp} {
+		.tablet-0 {
+			display: none;
+		}
+	}
+
+	@media #{$desktopUp} {
+		.desktop-0 {
+			display: none;
+		}
+	}
+
+	@media #{$largeUp} {
+		.large-0 {
+			display: none;
+		}
+	}
+
+	@media #{$phone} {
+
+		@for $i from 1 through $subgrid {
+
+			.phone-sub-#{$i} {
+				width: calc(100% - #{$phoneGutter});
+				margin-left: $phoneGutter/2;
+				margin-right: $phoneGutter/2;
+				@include subwrapper;
+				* {
+					@include subelement
+				}
+				> .subcol-phone {
+			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$phoneGutter/$i});
+			        margin-left: 0;
+					margin-right: 0;
+			    }
+			}
+
+		}
+
+		@for $i from 1 through $phoneGrid {
+
+			.phone-#{$i} {
+				width: calc(#{$phoneColumn*$i} - #{$phoneGutter});
+				margin-left: $phoneGutter/2;
+				margin-right: $phoneGutter/2;
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+		@for $i from 1 through $phoneGrid - 1 {
+
+			.phone-left-#{$i} {
+				margin-left: calc(#{$i*$phoneColumn} + #{$phoneGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+			.phone-right-#{$i} {
+				margin-right: calc(#{$i*$phoneColumn} + #{$phoneGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+	}
+
+	@media #{$tabletUp} {
+
+		@for $i from 1 through $subgrid {
+
+			.tablet-sub-#{$i} {
+				width: calc(100% - #{$tabletGutter});
+				margin-left: $tabletGutter/2;
+				margin-right: $tabletGutter/2;
+				@include subwrapper;
+				* {
+					@include subelement
+				}
+				> .subcol-tablet {
+			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$tabletGutter/$i});
+			        margin-left: 0;
+					margin-right: 0;
+			    }
+			}
+
+		}
+
+		@for $i from 1 through $tabletGrid {
+
+			.tablet-#{$i} {
+				width: calc(#{$tabletColumn*$i} - #{$tabletGutter});
+				margin-left: $tabletGutter/2;
+				margin-right: $tabletGutter/2;
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+		@for $i from 1 through $tabletGrid - 1 {
+
+			.tablet-left-#{$i} {
+				margin-left: calc(#{$i*$tabletColumn} + #{$tabletGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+			.tablet-right-#{$i} {
+				margin-right: calc(#{$i*$tabletColumn} + #{$tabletGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+		}
+		
+	}
+
+	@media #{$desktopUp} {
+
+		@for $i from 1 through $subgrid {
+
+			.desktop-sub-#{$i} {
+				width: calc(100% - #{$desktopGutter});
+				margin-left: $desktopGutter/2;
+				margin-right: $desktopGutter/2;
+				@include subwrapper;
+				* {
+					@include subelement
+				}
+			    > .subcol-desktop {
+			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$desktopGutter/$i});
+			        margin-left: 0;
+					margin-right: 0;
+			    }
+			}
+
+		}
+
+		@for $i from 1 through $desktopGrid {
+
+			.desktop-#{$i} {
+				width: calc(#{$desktopColumn*$i} - #{$desktopGutter});
+				margin-left: $desktopGutter/2;
+				margin-right: $desktopGutter/2;
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+		@for $i from 1 through $desktopGrid - 1 {
+
+			.desktop-left-#{$i} {
+				margin-left: calc(#{$i*$desktopColumn} + #{$desktopGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+			.desktop-right-#{$i} {
+				margin-right: calc(#{$i*$desktopColumn} + #{$desktopGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+	}
+
+	@media #{$largeUp} {
+
+		@for $i from 1 through $subgrid {
+
+			.large-sub-#{$i} {
+				width: calc(#{$largeColumn*$i} - #{$largeGutter});
+				margin-left: $largeGutter/2;
+				margin-right: $largeGutter/2;
+				@include subwrapper;
+				* {
+					@include subelement
+				}
+				> .subcol-large {
+			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$largeGutter/$i});
+			        margin-left: 0;
+					margin-right: 0;
+			    }
+			}
+
+		}
+
+		@for $i from 1 through $largeGrid {
+
+			.large-#{$i} {
+				width: calc(#{$largeColumn*$i} - #{$largeGutter});
+				margin-left: $largeGutter/2;
+				margin-right: $largeGutter/2;
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+		@for $i from 1 through $largeGrid - 1 {
+
+			.large-left-#{$i} {
+				margin-left: calc(#{$i*$largeColumn} + #{$largeGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+			.large-right-#{$i} {
+				margin-right: calc(#{$i*$largeColumn} + #{$largeGutter/2});
+				* {
+					@include subelement
+				}
+			}
+
+		}
+
+	}
+
+	.subwrapper {
+		@include subwrapper;
+	}
+
+	.justify {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		* {
+			width: auto;
+			display: block;
+		}
+	}
+
+	@media #{$phone} {
+		.justify-phone {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			* {
+				width: auto;
+				display: block;
+			}
+		}
+	}
+
+	@media #{$tablet} {
+		.justify-tablet {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			* {
+				width: auto;
+				display: block;
+			}
+		}
+	}
+
+	@media #{$desktop} {
+		.justify-desktop {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			* {
+				width: auto;
+				display: block;
+			}
+		}
+	}
+
+	@media #{$largeUp} {
+		.justify-large {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			* {
+				width: auto;
+				display: block;
+			}
+		}
+	}
+
+}
+
+#grid {
+	pointer-events: none;
+	box-shadow: 0 0 0 1px rgba(226, 22, 105, 0.5);
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	background-color: transparent;
+	padding-top: 0;
+	padding-bottom: 0;
+	z-index: 999;
+	.column {
+		height: 100%;
+		background-color: transparent;
+		margin-top: 0;
+		margin-bottom: 0;
+		.content {
+			height: 100%;
+			background-color: rgba(226, 22, 105, 0.1);
+		}
+	}
+}

@@ -1,0 +1,93 @@
+#menu {
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $branco;
+	z-index: 999;
+	.item {
+		cursor: pointer;
+		height: 2rem;
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: .5rem;
+		padding-right: .5rem;
+		text-align: center;
+		flex-grow: 1;
+		&:hover {
+			background-color: $verde-claro;
+		}
+		&:first-child {
+			margin-left: .5rem;
+		}
+		&:last-child {
+			margin-right: .5rem;
+		}
+	}
+	#botao-encomendar {
+		flex-grow: 1.5;
+		background-color: $amarelo-claro;
+		cursor: default;
+		&:hover {
+			background-color: $amarelo-claro;
+			#menu-dropdown {
+				display: flex;
+			}
+		}
+	}
+
+	#menu-dropdown {
+		display: none;
+		background-color: $amarelo-claro;
+		position: fixed;
+		top: 2rem;
+		left: 0;
+		width: 100vw;
+	}
+
+	#vitrine {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.produto-thumb {
+		position: relative;
+		figure {
+			padding-bottom: 66.666%;
+			background-color: $branco;
+			margin-bottom: .5rem;
+		}
+		p {
+			line-height: 1rem;
+			font-size: .666666rem;
+			color: $azul-escuro;
+			font-family: 'HurmeGeometric', sans-serif;
+			font-feature-settings: "swsh" 1;
+		}
+	}
+
+	#ver-encomendas {
+		background-color: $branco;
+		border-bottom: 1px solid $roxo-claro;
+		cursor: pointer;
+		&:hover {
+			background-color: $roxo-claro;
+		}
+	}
+}
+
+#botao-home {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	pointer-events: none;
+	align-items: flex-end;
+	.simbolo {
+		margin-bottom: 4rem;
+		pointer-events: all;
+	}
+}
