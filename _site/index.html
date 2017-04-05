@@ -61,8 +61,7 @@
 
 
     <section id="capa-home">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/UpN-SQSV8GU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen>
-  </iframe>
+  <iframe src="https://player.vimeo.com/video/20874177?color=fff1b6&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   <section class="wrapper" id="logo-capa-home">
     <figure class="phone-left-1 phone-right-1 tablet-left-4 tablet-right-4 desktop-left-5 desktop-right-5">
       <img src="/img/logo-completo.svg">
@@ -156,56 +155,73 @@
 
   </body>
 
-  <div id="grid" class="wrapper">
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
-
-  <div class="column phone-1 tablet-1 desktop-1 large-1">
-    <div class="content"></div>
-  </div> 
- 
+  <div id="grid">
+	<svg width="72" height="72" viewPort="0 0 72 72"
+    xmlns="http://www.w3.org/2000/svg">
+    	<polygon id="grid-button" points="0,0 72,72 72,72 0,72"/>
+    	<text x="12" y="60" font-family="monospace" font-size="24">G</text>
+	</svg>
+	<div class="wrapper">
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	
+	  <div class="column phone-1 tablet-1 desktop-1 large-1">
+	    <div class="content"></div>
+	  </div> 
+	 
+	</div>
 </div>
+
+<script type="text/javascript">
+	var grid = document.getElementById('grid');
+	var trigger = document.getElementById('grid-button');
+
+	trigger.addEventListener('click', function(e) {
+	    e.preventDefault();
+	    grid.classList.toggle('open');
+	});
+</script>
 
 </html>

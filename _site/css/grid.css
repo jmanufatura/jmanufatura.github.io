@@ -1714,23 +1714,47 @@
         display: block; } }
 
 #grid {
-  pointer-events: none;
-  box-shadow: 0 0 0 1px rgba(226, 22, 105, 0.5);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: transparent;
-  padding-top: 0;
-  padding-bottom: 0;
+  position: relative;
   z-index: 999; }
-  #grid .column {
-    height: 100%;
+  #grid.open .wrapper {
+    opacity: 1;
+    height: 100vh;
+    width: 100%;
+    transition: opacity .1s ease-in-out, width 0s ease-in-out 0s, height 0s ease-in-out 0s; }
+  #grid svg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 72px;
+    width: 72px; }
+    #grid svg #grid-button {
+      fill: rgba(226, 22, 105, 0.15);
+      cursor: pointer;
+      transition: fill .15s ease-in-out; }
+      #grid svg #grid-button:hover {
+        fill: rgba(226, 22, 105, 0.5); }
+    #grid svg text {
+      fill: #fff;
+      pointer-events: none; }
+  #grid .wrapper {
+    pointer-events: none;
+    box-shadow: 0 0 0 1px rgba(226, 22, 105, 0.5);
+    position: fixed;
+    height: 0;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
     background-color: transparent;
-    margin-top: 0;
-    margin-bottom: 0; }
-    #grid .column .content {
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    transition: opacity .1s ease-in-out, width 0s ease-in-out .1s, height 0s ease-in-out .1s; }
+    #grid .wrapper .column {
       height: 100%;
-      background-color: rgba(226, 22, 105, 0.1); }
+      background-color: transparent;
+      margin-top: 0;
+      margin-bottom: 0; }
+      #grid .wrapper .column .content {
+        height: 100%;
+        background-color: rgba(226, 22, 105, 0.15); }
