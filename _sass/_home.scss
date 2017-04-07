@@ -6,11 +6,9 @@
 		padding-right: 1rem;
 	}
 	.link {
-		text-transform: uppercase;
-		font-size: .75rem;
+		font-size: 19px;
 		text-align: center;
-		letter-spacing: 2px;
-		line-height: 1rem;
+		line-height: 23px;
 		font-family: 'HurmeGeometric', sans-serif;
 		width: auto;
 		@media #{$mobile} {
@@ -23,9 +21,9 @@
 }
 
 #capa-home{
-	margin-top: 2rem;
+	margin-top: 57px;
 	position: relative;
-	max-height: calc(100vh - 4rem);
+	max-height: calc(100vh - 105px);
 	overflow: hidden;
 }
 
@@ -43,25 +41,68 @@
 
 #pascoa {
 	background-color: $roxo-claro;
-	line-height: 1rem;
-	font-size: .66666rem;
+	font-size: 16px;
 	text-align: center;
-	padding-top: .5rem;
-	padding-bottom: .5rem;
+	height: 48px;
+	p {
+		line-height: 48px;
+	}
 }
 
 #historia {
-	height: calc(100vh - 2rem);
-	//max-height: 100vw;
-	background-image: url("/img/historia.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	.fundo {
+		background-image: url("/img/historia.jpg");
+		min-height: calc(100vh - 170px);
+		margin-top: 32px;
+	}
+}
+
+#pontos-de-venda {
+	.fundo {
+		background-image: url("/img/pontos-de-venda.jpg");
+		min-height: calc(100vh - 124px);
+		margin-top: 78px;
+	}
+}
+
+#historia, #pontos-de-venda {
+	min-height: calc(100vh - 57px);
+	.fundo {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-bottom: 81px;
+		justify-content: flex-end;
+		.container-caixa {
+			padding-top: 22px;
+			padding-bottom: 22px;
+			padding-right: 24px;
+			.caixa {
+				padding-top: 78px;
+				padding-bottom: 92px;
+				padding-left: 17.17%;
+				padding-right: 17.17%;
+				background-color: $branco;
+				h1, p {
+					color: $azul-escuro;
+				}
+				h1 {
+					margin-bottom: 32px;
+				}
+				p {
+					text-align: justify;
+					&.grande {
+						margin-bottom: 25px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
 }
 
 #produtos-capa {
-	height: calc(50vh - 1rem);
-	//max-height: 100vw;
+	min-height: calc(100vh - 57px);
 	background-image: url("/img/produtos-capa.jpg");
 	background-size: cover;
 	background-position: center;
@@ -69,8 +110,14 @@
 }
 
 #produtos {
-	min-height: calc(50vh - 1rem);
+	min-height: calc(100vh - 57px);
 	background-color: $branco;
+	.produto {
+		figure {
+			background-color: roxo-claro;
+			padding-bottom: 100%;
+		}
+	}
 }
 
 #eventos {
@@ -82,25 +129,24 @@
 	background-repeat: no-repeat;
 }
 
-#pontos-de-venda {
-	height: calc(100vh - 2rem);
-	//max-height: 100vw;
-	background-image: url("/img/pontos-de-venda.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
 #entregas {
-	min-height: calc(100vh - 2rem);
-	background-color: $branco;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	min-height: 33.333vw;
+	background-color: $roxo-claro;
 	h1 {
 		margin-bottom: 2rem;
 	}
 	p {
 		margin-bottom: 1rem;
+	}
+}
+
+#detalhes-entrega {
+	padding-bottom: 75px;
+	p, h6 {
+		text-align: center;
+	}
+	h6 {
+		margin-top: 75px;
 	}
 }
 
@@ -129,24 +175,14 @@
 }
 
 #mapa {
-	padding-bottom: 33.333%;
-	background-color: $verde-claro;
-	margin-bottom: 2rem;
-	border-left: 2px solid $verde-claro;
-	border-bottom: 2px solid $verde-claro;
-	border-right: 2px solid $verde-claro;
-	background-image: url("/img/mapa.jpg");
+	width: calc(50% - 15px);
+	left: 0;
+	position: absolute;
+	min-height: 33.333vw;
+	background-image: url("/img/mapa.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-#detalhes-entrega {
-	// @media #{$phone} {
-	// 	p {
-	// 		text-align: center;
-	// 	}
-	// }
 }
 
 #despedida {
@@ -159,20 +195,14 @@
 
 #info {
 	background-color: $vermelho-claro;
-	padding-bottom: 3.5rem;
-	padding-top: 3rem;
+	padding-bottom: 32px;
+	padding-top: 27px;
 	li {
 		list-style: none;
-		margin-bottom: .5rem;
 	}
-	li, h6 {
-		line-height: 1rem;
-		font-size: .6rem;
-		a {
-			text-transform: uppercase;
-			font-size: .5rem;
-			letter-spacing: 1px;
-		}
+	li, h6, a {
+		line-height: 22px;
+		font-size: 16px;
 	}
 	@media #{$phone} {
 		padding-top: 1rem;
@@ -185,7 +215,7 @@
 		li, h6 {
 			text-align: center;
 		}
-		.contato {
+		li {
 			margin-bottom: 1.5rem;
 			border-bottom: 1px solid $azul-escuro;
 			padding-bottom: 1rem;

@@ -22,8 +22,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2rem;
-	line-height: 2.5rem;
+	font-size: 43px;
+	line-height: 50px;
 	margin-bottom: .5rem;
 	@media #{$mobile} {
 		font-size: 1.5rem;
@@ -41,13 +41,18 @@ label, p, figcaption, input, button, li {
 }
 
 p {
-	font-size: .6rem;
-	line-height: 1rem;
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 11px;
+	&.grande {
+		font-size: 25px;
+		line-height: 30px;
+	}
 }
 
 .botao {
-	text-transform: uppercase;
-	font-size: .5rem;
-	letter-spacing: 1px;
-	line-height: 2rem;
+	font-family: 'HurmeGeometric', sans-serif;
+	font-feature-settings: "swsh" 1;
+	font-size: 17px;
+	line-height: 57px;
 }

@@ -8,22 +8,26 @@
 	z-index: 999;
 	.item {
 		cursor: pointer;
-		height: 2rem;
+		height: 57px;
 		width: auto;
 		margin-left: 0;
 		margin-right: 0;
-		padding-left: .5rem;
-		padding-right: .5rem;
+		padding-left: 15px;
+		padding-right: 15px;
 		text-align: center;
 		flex-grow: 1;
 		&:hover {
 			background-color: $verde-claro;
 		}
 		&:first-child {
-			margin-left: .5rem;
+			margin-left: 15px;
 		}
 		&:last-child {
-			margin-right: .5rem;
+			margin-right: 15px;
+		}
+		.botao {
+			font-family: 'HurmeGeometric', sans-serif;
+			font-feature-settings: "swsh" 1;
 		}
 	}
 	#botao-encomendar {
@@ -54,17 +58,26 @@
 
 	.produto-thumb {
 		position: relative;
+		width: 170px;
 		figure {
-			padding-bottom: 66.666%;
+			padding-bottom: 100%;
 			background-color: $branco;
 			margin-bottom: .5rem;
 		}
-		p {
-			line-height: 1rem;
-			font-size: .666666rem;
+		h6 {
+			text-align: center;
+			line-height: 16px;
+			font-size: 14px;
+			margin-bottom: 24px;
 			color: $azul-escuro;
 			font-family: 'HurmeGeometric', sans-serif;
 			font-feature-settings: "swsh" 1;
+		}
+		.encomendar {
+			text-align: center;
+			line-height: 16px;
+			font-size: 14px;
+			color: $azul-escuro;
 		}
 	}
 
@@ -87,7 +100,16 @@
 	pointer-events: none;
 	align-items: flex-end;
 	.simbolo {
-		margin-bottom: 4rem;
-		pointer-events: all;
+		margin-bottom: 32px;
+		justify-content: center;
+		padding-left: 45px;
+		a {
+			pointer-events: all;
+			width: auto;
+		}
+		img {
+			height: 88px;
+			width: auto;
+		}
 	}
 }

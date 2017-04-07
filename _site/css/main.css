@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "swsh" 1; }
 
 h1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 43px;
+  line-height: 50px;
   margin-bottom: .5rem; }
   @media all and (max-width: 64rem) {
     h1 {
@@ -41,14 +41,18 @@ label, p, figcaption, input, button, li {
   color: #002831; }
 
 p {
-  font-size: .6rem;
-  line-height: 1rem; }
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 11px; }
+  p.grande {
+    font-size: 25px;
+    line-height: 30px; }
 
 .botao {
-  text-transform: uppercase;
-  font-size: .5rem;
-  letter-spacing: 1px;
-  line-height: 2rem; }
+  font-family: 'HurmeGeometric', sans-serif;
+  font-feature-settings: "swsh" 1;
+  font-size: 17px;
+  line-height: 57px; }
 
 #menu {
   flex-wrap: nowrap;
@@ -60,20 +64,23 @@ p {
   z-index: 999; }
   #menu .item {
     cursor: pointer;
-    height: 2rem;
+    height: 57px;
     width: auto;
     margin-left: 0;
     margin-right: 0;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
     flex-grow: 1; }
     #menu .item:hover {
       background-color: #daebe3; }
     #menu .item:first-child {
-      margin-left: .5rem; }
+      margin-left: 15px; }
     #menu .item:last-child {
-      margin-right: .5rem; }
+      margin-right: 15px; }
+    #menu .item .botao {
+      font-family: 'HurmeGeometric', sans-serif;
+      font-feature-settings: "swsh" 1; }
   #menu #botao-encomendar {
     flex-grow: 1.5;
     background-color: #fff1b6;
@@ -93,17 +100,25 @@ p {
     padding-top: 2rem;
     padding-bottom: 2rem; }
   #menu .produto-thumb {
-    position: relative; }
+    position: relative;
+    width: 170px; }
     #menu .produto-thumb figure {
-      padding-bottom: 66.666%;
+      padding-bottom: 100%;
       background-color: #fff;
       margin-bottom: .5rem; }
-    #menu .produto-thumb p {
-      line-height: 1rem;
-      font-size: .666666rem;
+    #menu .produto-thumb h6 {
+      text-align: center;
+      line-height: 16px;
+      font-size: 14px;
+      margin-bottom: 24px;
       color: #002831;
       font-family: 'HurmeGeometric', sans-serif;
       font-feature-settings: "swsh" 1; }
+    #menu .produto-thumb .encomendar {
+      text-align: center;
+      line-height: 16px;
+      font-size: 14px;
+      color: #002831; }
   #menu #ver-encomendas {
     background-color: #fff;
     border-bottom: 1px solid #f1ecf5;
@@ -120,8 +135,15 @@ p {
   pointer-events: none;
   align-items: flex-end; }
   #botao-home .simbolo {
-    margin-bottom: 4rem;
-    pointer-events: all; }
+    margin-bottom: 32px;
+    justify-content: center;
+    padding-left: 45px; }
+    #botao-home .simbolo a {
+      pointer-events: all;
+      width: auto; }
+    #botao-home .simbolo img {
+      height: 88px;
+      width: auto; }
 
 #capa-home, #historia, #produtos-capa, #eventos, #pontos-de-venda {
   align-content: center;
@@ -130,11 +152,9 @@ p {
     padding-left: 1rem;
     padding-right: 1rem; }
   #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
-    text-transform: uppercase;
-    font-size: .75rem;
+    font-size: 19px;
     text-align: center;
-    letter-spacing: 2px;
-    line-height: 1rem;
+    line-height: 23px;
     font-family: 'HurmeGeometric', sans-serif;
     width: auto; }
     @media all and (max-width: 64rem) {
@@ -145,9 +165,9 @@ p {
         padding-right: 2rem; } }
 
 #capa-home {
-  margin-top: 2rem;
+  margin-top: 57px;
   position: relative;
-  max-height: calc(100vh - 4rem);
+  max-height: calc(100vh - 105px);
   overflow: hidden; }
 
 #logo-capa-home {
@@ -161,29 +181,63 @@ p {
 
 #pascoa {
   background-color: #f1ecf5;
-  line-height: 1rem;
-  font-size: .66666rem;
+  font-size: 16px;
   text-align: center;
-  padding-top: .5rem;
-  padding-bottom: .5rem; }
+  height: 48px; }
+  #pascoa p {
+    line-height: 48px; }
 
-#historia {
-  height: calc(100vh - 2rem);
+#historia .fundo {
   background-image: url("/img/historia.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  min-height: calc(100vh - 170px);
+  margin-top: 32px; }
+
+#pontos-de-venda .fundo {
+  background-image: url("/img/pontos-de-venda.jpg");
+  min-height: calc(100vh - 124px);
+  margin-top: 78px; }
+
+#historia, #pontos-de-venda {
+  min-height: calc(100vh - 57px); }
+  #historia .fundo, #pontos-de-venda .fundo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 81px;
+    justify-content: flex-end; }
+    #historia .fundo .container-caixa, #pontos-de-venda .fundo .container-caixa {
+      padding-top: 22px;
+      padding-bottom: 22px;
+      padding-right: 24px; }
+      #historia .fundo .container-caixa .caixa, #pontos-de-venda .fundo .container-caixa .caixa {
+        padding-top: 78px;
+        padding-bottom: 92px;
+        padding-left: 17.17%;
+        padding-right: 17.17%;
+        background-color: #fff; }
+        #historia .fundo .container-caixa .caixa h1, #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa p {
+          color: #002831; }
+        #historia .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa h1 {
+          margin-bottom: 32px; }
+        #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa p {
+          text-align: justify; }
+          #historia .fundo .container-caixa .caixa p.grande, #pontos-de-venda .fundo .container-caixa .caixa p.grande {
+            margin-bottom: 25px;
+            text-align: center; }
 
 #produtos-capa {
-  height: calc(50vh - 1rem);
+  min-height: calc(100vh - 57px);
   background-image: url("/img/produtos-capa.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
 
 #produtos {
-  min-height: calc(50vh - 1rem);
+  min-height: calc(100vh - 57px);
   background-color: #fff; }
+  #produtos .produto figure {
+    background-color: roxo-claro;
+    padding-bottom: 100%; }
 
 #eventos {
   height: calc(100vh - 2rem);
@@ -192,22 +246,20 @@ p {
   background-position: center;
   background-repeat: no-repeat; }
 
-#pontos-de-venda {
-  height: calc(100vh - 2rem);
-  background-image: url("/img/pontos-de-venda.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
-
 #entregas {
-  min-height: calc(100vh - 2rem);
-  background-color: #fff;
-  padding-top: 2rem;
-  padding-bottom: 2rem; }
+  min-height: 33.333vw;
+  background-color: #f1ecf5; }
   #entregas h1 {
     margin-bottom: 2rem; }
   #entregas p {
     margin-bottom: 1rem; }
+
+#detalhes-entrega {
+  padding-bottom: 75px; }
+  #detalhes-entrega p, #detalhes-entrega h6 {
+    text-align: center; }
+  #detalhes-entrega h6 {
+    margin-top: 75px; }
 
 #verificar-entrega {
   display: flex;
@@ -229,13 +281,11 @@ p {
     background-color: #daebe3; }
 
 #mapa {
-  padding-bottom: 33.333%;
-  background-color: #daebe3;
-  margin-bottom: 2rem;
-  border-left: 2px solid #daebe3;
-  border-bottom: 2px solid #daebe3;
-  border-right: 2px solid #daebe3;
-  background-image: url("/img/mapa.jpg");
+  width: calc(50% - 15px);
+  left: 0;
+  position: absolute;
+  min-height: 33.333vw;
+  background-image: url("/img/mapa.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
@@ -248,18 +298,13 @@ p {
 
 #info {
   background-color: #f5e5e0;
-  padding-bottom: 3.5rem;
-  padding-top: 3rem; }
+  padding-bottom: 32px;
+  padding-top: 27px; }
   #info li {
-    list-style: none;
-    margin-bottom: .5rem; }
-  #info li, #info h6 {
-    line-height: 1rem;
-    font-size: .6rem; }
-    #info li a, #info h6 a {
-      text-transform: uppercase;
-      font-size: .5rem;
-      letter-spacing: 1px; }
+    list-style: none; }
+  #info li, #info h6, #info a {
+    line-height: 22px;
+    font-size: 16px; }
   @media all and (max-width: 40rem) {
     #info {
       padding-top: 1rem; } }
@@ -267,7 +312,7 @@ p {
 @media all and (max-width: 40rem) {
   #info li, #info h6 {
     text-align: center; }
-  #info .contato {
+  #info li {
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #002831;
     padding-bottom: 1rem; } }

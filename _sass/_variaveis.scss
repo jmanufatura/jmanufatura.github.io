@@ -2,16 +2,16 @@ $breakpoint1: 40rem;
 $breakpoint2: 64rem;
 $breakpoint3: 90rem;
 
-$defaultGutter: 1rem;
+$defaultGutter: 30px;
 
 $phoneGrid: 4;
-$phoneGutter: 1rem;
+$phoneGutter: 30px;
 $phoneWrapper: 100%;
 $phoneColumn: 100%/$phoneGrid;
 $phone: "all and (max-width: #{$breakpoint1})";
 
 $tabletGrid: 12;
-$tabletGutter: 1rem;
+$tabletGutter: 30px;
 $tabletWrapper: 83.33333%;
 $tabletColumn: 100%/$tabletGrid;
 $tablet: "all and (min-width: #{$breakpoint1 + 0.0625rem}) and (max-width: #{$breakpoint2})";
@@ -20,14 +20,14 @@ $tabletUp: "all and (min-width: #{$breakpoint1 + 0.0625rem})";
 $mobile: "all and (max-width: #{$breakpoint2})";
 
 $desktopGrid: 12;
-$desktopGutter: 1rem;
+$desktopGutter: 30px;
 $desktopWrapper: 83.33333%;
 $desktopColumn: 100%/$desktopGrid;
 $desktop: "all and (min-width: #{$breakpoint2 + 0.0625rem}) and (max-width: #{$breakpoint3})";
 $desktopUp: "all and (min-width: #{$breakpoint2 + 0.0625rem})";
 
 $largeGrid: 12;
-$largeGutter: 1rem;
+$largeGutter: 30px;
 $largeWrapper: 75%;
 $largeColumn: 100%/$largeGrid;
 $largeUp: "all and (min-width: #{$breakpoint3 + 0.0625rem})";
