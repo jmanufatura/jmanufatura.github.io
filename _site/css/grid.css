@@ -35,8 +35,8 @@
       padding-right: calc(8.33333% - 15px); } }
   @media all and (min-width: 90.0625rem) {
     .wrapper {
-      padding-left: calc(12.5% - 15px);
-      padding-right: calc(12.5% - 15px); } }
+      padding-left: calc(8.33333% - 15px);
+      padding-right: calc(8.33333% - 15px); } }
   .wrapper article, .wrapper form, .wrapper fieldset,
   .wrapper datalist, .wrapper select, .wrapper optgroup,
   .wrapper nav, .wrapper div, .wrapper aside, .wrapper ul, .wrapper ol {

@@ -46,19 +46,20 @@
 		display: none;
 		background-color: $amarelo-claro;
 		position: fixed;
-		top: 2rem;
+		top: 57px;
 		left: 0;
 		width: 100vw;
 	}
 
 	#vitrine {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		padding-top: 42px;
+		padding-bottom: 42px;
 	}
 
 	.produto-thumb {
 		position: relative;
 		width: 170px;
+		justify-content: center;
 		figure {
 			padding-bottom: 100%;
 			background-color: $branco;
@@ -77,13 +78,25 @@
 			text-align: center;
 			line-height: 16px;
 			font-size: 14px;
+			width: auto;
 			color: $azul-escuro;
+			position: relative;
+			&:hover {
+				&:after {
+					content: "";
+					height: 1px;
+					width: 100%;
+					background-color: $azul-escuro;
+					position: absolute;
+					left: 0;
+					bottom: -5px;
+				}
+			}
 		}
 	}
 
 	#ver-encomendas {
 		background-color: $branco;
-		border-bottom: 1px solid $roxo-claro;
 		cursor: pointer;
 		&:hover {
 			background-color: $roxo-claro;

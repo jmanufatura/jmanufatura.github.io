@@ -63,6 +63,11 @@
 		min-height: calc(100vh - 124px);
 		margin-top: 78px;
 	}
+	address {
+		margin-top: 52px;
+		margin-bottom: 72px;
+		font-style: normal;
+	}
 }
 
 #historia, #pontos-de-venda {
@@ -83,11 +88,15 @@
 				padding-left: 17.17%;
 				padding-right: 17.17%;
 				background-color: $branco;
+				justify-content: center;
 				h1, p {
 					color: $azul-escuro;
 				}
 				h1 {
 					margin-bottom: 32px;
+				}
+				address p {
+					text-align: center;
 				}
 				p {
 					text-align: justify;
@@ -112,10 +121,16 @@
 #produtos {
 	min-height: calc(100vh - 57px);
 	background-color: $branco;
+	align-items: center;
 	.produto {
 		figure {
 			background-color: roxo-claro;
 			padding-bottom: 100%;
+			background-color: $amarelo-claro;
+		}
+		h6 {
+			margin-top: 48px;
+			text-align: center;
 		}
 	}
 }
@@ -132,6 +147,7 @@
 #entregas {
 	min-height: 33.333vw;
 	background-color: $roxo-claro;
+	position: relative;
 	h1 {
 		margin-bottom: 2rem;
 	}
@@ -153,6 +169,8 @@
 #verificar-entrega {
 	display: flex;
 	flex-wrap: nowrap;
+	align-self: flex-end;
+	margin-bottom: 44px;
 	input, button {
 		height: 2rem;
 		line-height: 2rem;
@@ -160,9 +178,10 @@
 	input {
 		width: 66.666%;
 		margin-right: 0;
-		border: 2px solid $verde-claro;
 		font-size: .666rem;
 		padding-left: .5rem;
+		font-size: 14px;
+		text-align: center;
 		&:focus {
 			outline-width: 0;
 		}
@@ -170,7 +189,7 @@
 	button {
 		width: 33.333%;
 		margin-left: 0;
-		background-color: $verde-claro;
+		background-color: $roxo-claro;
 	}
 }
 
@@ -178,7 +197,7 @@
 	width: calc(50% - 15px);
 	left: 0;
 	position: absolute;
-	min-height: 33.333vw;
+	height: 100%;
 	background-image: url("/img/mapa.png");
 	background-size: cover;
 	background-position: center;
@@ -190,6 +209,7 @@
 	text-align: center;
 	p {
 		line-height: 2rem;
+		margin-bottom: 0;
 	}
 }
 

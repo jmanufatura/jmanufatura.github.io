@@ -93,15 +93,16 @@ p {
     display: none;
     background-color: #fff1b6;
     position: fixed;
-    top: 2rem;
+    top: 57px;
     left: 0;
     width: 100vw; }
   #menu #vitrine {
-    padding-top: 2rem;
-    padding-bottom: 2rem; }
+    padding-top: 42px;
+    padding-bottom: 42px; }
   #menu .produto-thumb {
     position: relative;
-    width: 170px; }
+    width: 170px;
+    justify-content: center; }
     #menu .produto-thumb figure {
       padding-bottom: 100%;
       background-color: #fff;
@@ -118,10 +119,19 @@ p {
       text-align: center;
       line-height: 16px;
       font-size: 14px;
-      color: #002831; }
+      width: auto;
+      color: #002831;
+      position: relative; }
+      #menu .produto-thumb .encomendar:hover:after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: #002831;
+        position: absolute;
+        left: 0;
+        bottom: -5px; }
   #menu #ver-encomendas {
     background-color: #fff;
-    border-bottom: 1px solid #f1ecf5;
     cursor: pointer; }
     #menu #ver-encomendas:hover {
       background-color: #f1ecf5; }
@@ -196,6 +206,10 @@ p {
   background-image: url("/img/pontos-de-venda.jpg");
   min-height: calc(100vh - 124px);
   margin-top: 78px; }
+#pontos-de-venda address {
+  margin-top: 52px;
+  margin-bottom: 72px;
+  font-style: normal; }
 
 #historia, #pontos-de-venda {
   min-height: calc(100vh - 57px); }
@@ -214,11 +228,14 @@ p {
         padding-bottom: 92px;
         padding-left: 17.17%;
         padding-right: 17.17%;
-        background-color: #fff; }
+        background-color: #fff;
+        justify-content: center; }
         #historia .fundo .container-caixa .caixa h1, #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa p {
           color: #002831; }
         #historia .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa h1 {
           margin-bottom: 32px; }
+        #historia .fundo .container-caixa .caixa address p, #pontos-de-venda .fundo .container-caixa .caixa address p {
+          text-align: center; }
         #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa p {
           text-align: justify; }
           #historia .fundo .container-caixa .caixa p.grande, #pontos-de-venda .fundo .container-caixa .caixa p.grande {
@@ -234,10 +251,15 @@ p {
 
 #produtos {
   min-height: calc(100vh - 57px);
-  background-color: #fff; }
+  background-color: #fff;
+  align-items: center; }
   #produtos .produto figure {
     background-color: roxo-claro;
-    padding-bottom: 100%; }
+    padding-bottom: 100%;
+    background-color: #fff1b6; }
+  #produtos .produto h6 {
+    margin-top: 48px;
+    text-align: center; }
 
 #eventos {
   height: calc(100vh - 2rem);
@@ -248,7 +270,8 @@ p {
 
 #entregas {
   min-height: 33.333vw;
-  background-color: #f1ecf5; }
+  background-color: #f1ecf5;
+  position: relative; }
   #entregas h1 {
     margin-bottom: 2rem; }
   #entregas p {
@@ -263,28 +286,31 @@ p {
 
 #verificar-entrega {
   display: flex;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  align-self: flex-end;
+  margin-bottom: 44px; }
   #verificar-entrega input, #verificar-entrega button {
     height: 2rem;
     line-height: 2rem; }
   #verificar-entrega input {
     width: 66.666%;
     margin-right: 0;
-    border: 2px solid #daebe3;
     font-size: .666rem;
-    padding-left: .5rem; }
+    padding-left: .5rem;
+    font-size: 14px;
+    text-align: center; }
     #verificar-entrega input:focus {
       outline-width: 0; }
   #verificar-entrega button {
     width: 33.333%;
     margin-left: 0;
-    background-color: #daebe3; }
+    background-color: #f1ecf5; }
 
 #mapa {
   width: calc(50% - 15px);
   left: 0;
   position: absolute;
-  min-height: 33.333vw;
+  height: 100%;
   background-image: url("/img/mapa.png");
   background-size: cover;
   background-position: center;
@@ -294,7 +320,8 @@ p {
   background-color: #daebe3;
   text-align: center; }
   #despedida p {
-    line-height: 2rem; }
+    line-height: 2rem;
+    margin-bottom: 0; }
 
 #info {
   background-color: #f5e5e0;
