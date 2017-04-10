@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9.94" height="9.59" viewBox="0 0 9.94 9.59">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>seta-anterior</title>
+  <g>
+    <polyline class="a" points="4.71 9.25 0.67 4.79 4.71 0.34"/>
+    <line class="a" x1="0.67" y1="4.79" x2="9.94" y2="4.79"/>
+  </g>
+</svg>

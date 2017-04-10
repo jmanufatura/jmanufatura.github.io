@@ -1,6 +1,6 @@
 <header class="wrapper" id="menu">
 	<a class="item element mobile-0" href=""><span class="botao">história</span></a>
-	<a class="item element mobile-0" href=""><span class="botao">bolos &amp; produtos</span></a>
+	<a class="item element mobile-0" href="/produtos"><span class="botao">bolos &amp; produtos</span></a>
 	<a class="item element mobile-0" href=""><span class="botao">eventos</span></a>
 	<a class="item element mobile-0" href=""><span class="botao">pontos de venda</span></a>
 	<a class="item element mobile-0" href=""><span class="botao">entregas</span></a>
@@ -9,46 +9,39 @@
 		<span class="botao">encomende aqui (0)</span>
 		<div id="menu-dropdown">
 			<div class="wrapper" id="vitrine">
-				<div class="desktop-1"></div>
+				<a href="" class="desktop-1" id="produto-anterior"></a>
 				<div class="desktop-10 desktop-sub-4">
-					<div class="subcol-desktop produto-thumb">
-						<a href="">
-							<h6>O bolo da ivone</h6>
-							<figure></figure>	
-						</a>
-						<a href="" class="encomendar">encomendar</a>
-					</div>
-					<div class="subcol-desktop produto-thumb">
-						<a href="">
-							<h6>Cupcake</h6>
-							<figure></figure>	
-						</a>
-						<a href="" class="encomendar">encomendar</a>
-					</div>
-					<div class="subcol-desktop produto-thumb">
-						<a href="">
-							<h6>Bolo no pote</h6>
-							<figure></figure>	
-						</a>
-						<a href="" class="encomendar">encomendar</a>
-					</div>
-					<div class="subcol-desktop produto-thumb">
-						<a href="">
-							<h6>Bem-casado</h6>
-							<figure></figure>	
-						</a>
-						<a href="" class="encomendar">encomendar</a>
-					</div>
+
+					{% include thumb-header.html
+						nome="O bolo da ivone"
+						id="o-bolo-da-ivone"
+					%}
+
+					{% include thumb-header.html
+						nome="Mini-cupcake"
+						id="mini-cupcake"
+					%}
+
+					{% include thumb-header.html
+						nome="Bolo no pote"
+						id="bolo-no-pote"
+					%}
+
+					{% include thumb-header.html
+						nome="O bolo da ivone"
+						id="o-bolo-da-ivone"
+					%}
+
 				</div>
-				<div class="desktop-1"></div>
+				<a href="" class="desktop-1" id="produto-proximo"></a>
 			</div>
-			<div class="wrapper botao" id="ver-encomendas"><a href="">ver minhas encomendas</a></div>
+			<div class="wrapper botao" id="ver-encomendas"><a href="">ver minhas encomendas →</a></div>
 		</div>
 	</nav>
 </header>
 <nav class="wrapper" id="botao-home">
 	<div class="simbolo desktop-right-10 tablet-right-10 phone-0">
-		<a href="">
+		<a href="/">
 			<img src="/img/simbolo.svg">
 		</a>
 	</div>

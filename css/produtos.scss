@@ -1,0 +1,68 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
+#capa-produtos {
+	height: calc(100vh - 57px);
+	max-height: 100vw;
+	margin-top: 57px;
+	background-image: url("/img/capa-produtos.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.produto {
+	padding-top: 88px;
+	align-items: stretch;
+	.thumb {
+		padding-bottom: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	&:last-of-type {
+		padding-bottom: 88px;
+	}
+	p {
+		line-height: 23px;
+		font-size: 19px;
+		text-align: center;
+	}
+	.info {
+		justify-content: center;
+		align-content: space-between;
+		div {
+			justify-content: center;
+		}
+		.nome {
+			margin-top: 51px;
+			margin-bottom: 38px;
+		}
+		.encomendar {
+			font-family: 'HurmeGeometric', sans-serif;
+			text-align: center;
+			line-height: 23px;
+			font-size: 19px;
+			width: auto;
+			color: $azul-escuro;
+			position: relative;
+			margin-bottom: 56px;
+			&:hover {
+				&:after {
+					content: "";
+					height: 1px;
+					width: 100%;
+					background-color: $azul-escuro;
+					position: absolute;
+					left: 0;
+					bottom: -5px;
+				}
+			}
+		}
+	}
+}

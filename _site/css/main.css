@@ -18,6 +18,9 @@ body {
 .negativo h1, .negativo h2, .negativo h3, .negativo h4, .negativo h5, .negativo h6, .negativo label, .negativo p, .negativo figcaption, .negativo input, .negativo button, .negativo li, .negativo a {
   color: #fff; }
 
+.seta {
+  font-family: 'HurmeGeometric', sans-serif; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'HurmeGeometric', sans-serif;
   text-align: center;
@@ -25,8 +28,8 @@ h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "swsh" 1; }
 
 h1 {
-  font-size: 43px;
-  line-height: 50px;
+  font-size: 36px;
+  line-height: 40px;
   margin-bottom: .5rem; }
   @media all and (max-width: 64rem) {
     h1 {
@@ -62,6 +65,14 @@ p {
   left: 0;
   background-color: #fff;
   z-index: 999; }
+  #menu #produto-anterior, #menu #produto-proximo {
+    background-position: center;
+    background-size: 10px auto;
+    background-repeat: no-repeat; }
+  #menu #produto-anterior {
+    background-image: url("/img/seta-anterior.svg"); }
+  #menu #produto-proximo {
+    background-image: url("/img/seta-proximo.svg"); }
   #menu .item {
     cursor: pointer;
     height: 57px;
@@ -98,16 +109,20 @@ p {
     width: 100vw; }
   #menu #vitrine {
     padding-top: 42px;
-    padding-bottom: 42px; }
-  #menu .produto-thumb {
+    padding-bottom: 42px;
+    align-items: stretch; }
+  #menu .thumb-header {
     position: relative;
     width: 170px;
     justify-content: center; }
-    #menu .produto-thumb figure {
+    #menu .thumb-header figure {
       padding-bottom: 100%;
-      background-color: #fff;
-      margin-bottom: .5rem; }
-    #menu .produto-thumb h6 {
+      background-color: transparent;
+      margin-bottom: .5rem;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+    #menu .thumb-header h6 {
       text-align: center;
       line-height: 16px;
       font-size: 14px;
@@ -115,14 +130,14 @@ p {
       color: #002831;
       font-family: 'HurmeGeometric', sans-serif;
       font-feature-settings: "swsh" 1; }
-    #menu .produto-thumb .encomendar {
+    #menu .thumb-header .encomendar {
       text-align: center;
       line-height: 16px;
       font-size: 14px;
       width: auto;
       color: #002831;
       position: relative; }
-      #menu .produto-thumb .encomendar:hover:after {
+      #menu .thumb-header .encomendar:hover:after {
         content: "";
         height: 1px;
         width: 100%;
@@ -154,167 +169,6 @@ p {
     #botao-home .simbolo img {
       height: 88px;
       width: auto; }
-
-#capa-home, #historia, #produtos-capa, #eventos, #pontos-de-venda {
-  align-content: center;
-  justify-content: center; }
-  #capa-home h1, #historia h1, #produtos-capa h1, #eventos h1, #pontos-de-venda h1 {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
-    font-size: 19px;
-    text-align: center;
-    line-height: 23px;
-    font-family: 'HurmeGeometric', sans-serif;
-    width: auto; }
-    @media all and (max-width: 64rem) {
-      #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
-        font-size: .5rem;
-        letter-spacing: 1px;
-        padding-left: 2rem;
-        padding-right: 2rem; } }
-
-#capa-home {
-  margin-top: 57px;
-  position: relative;
-  max-height: calc(100vh - 105px);
-  overflow: hidden; }
-
-#logo-capa-home {
-  position: absolute;
-  top: 2rem;
-  pointer-events: none; }
-  @media all and (min-width: 40.0625rem) and (max-width: 64rem) {
-    #logo-capa-home figure {
-      padding-left: 1rem;
-      padding-right: 1rem; } }
-
-#pascoa {
-  background-color: #f1ecf5;
-  font-size: 16px;
-  text-align: center;
-  height: 48px; }
-  #pascoa p {
-    line-height: 48px; }
-
-#historia .fundo {
-  background-image: url("/img/historia.jpg");
-  min-height: calc(100vh - 170px);
-  margin-top: 32px; }
-
-#pontos-de-venda .fundo {
-  background-image: url("/img/pontos-de-venda.jpg");
-  min-height: calc(100vh - 124px);
-  margin-top: 78px; }
-#pontos-de-venda address {
-  margin-top: 52px;
-  margin-bottom: 72px;
-  font-style: normal; }
-
-#historia, #pontos-de-venda {
-  min-height: calc(100vh - 57px); }
-  #historia .fundo, #pontos-de-venda .fundo {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 81px;
-    justify-content: flex-end; }
-    #historia .fundo .container-caixa, #pontos-de-venda .fundo .container-caixa {
-      padding-top: 22px;
-      padding-bottom: 22px;
-      padding-right: 24px; }
-      #historia .fundo .container-caixa .caixa, #pontos-de-venda .fundo .container-caixa .caixa {
-        padding-top: 78px;
-        padding-bottom: 92px;
-        padding-left: 17.17%;
-        padding-right: 17.17%;
-        background-color: #fff;
-        justify-content: center; }
-        #historia .fundo .container-caixa .caixa h1, #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa p {
-          color: #002831; }
-        #historia .fundo .container-caixa .caixa h1, #pontos-de-venda .fundo .container-caixa .caixa h1 {
-          margin-bottom: 32px; }
-        #historia .fundo .container-caixa .caixa address p, #pontos-de-venda .fundo .container-caixa .caixa address p {
-          text-align: center; }
-        #historia .fundo .container-caixa .caixa p, #pontos-de-venda .fundo .container-caixa .caixa p {
-          text-align: justify; }
-          #historia .fundo .container-caixa .caixa p.grande, #pontos-de-venda .fundo .container-caixa .caixa p.grande {
-            margin-bottom: 25px;
-            text-align: center; }
-
-#produtos-capa {
-  min-height: calc(100vh - 57px);
-  background-image: url("/img/produtos-capa.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-#produtos {
-  min-height: calc(100vh - 57px);
-  background-color: #fff;
-  align-items: center; }
-  #produtos .produto figure {
-    background-color: roxo-claro;
-    padding-bottom: 100%;
-    background-color: #fff1b6; }
-  #produtos .produto h6 {
-    margin-top: 48px;
-    text-align: center; }
-
-#eventos {
-  height: calc(100vh - 2rem);
-  background-image: url("/img/eventos.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-#entregas {
-  min-height: 33.333vw;
-  background-color: #f1ecf5;
-  position: relative; }
-  #entregas h1 {
-    margin-bottom: 2rem; }
-  #entregas p {
-    margin-bottom: 1rem; }
-
-#detalhes-entrega {
-  padding-bottom: 75px; }
-  #detalhes-entrega p, #detalhes-entrega h6 {
-    text-align: center; }
-  #detalhes-entrega h6 {
-    margin-top: 75px; }
-
-#verificar-entrega {
-  display: flex;
-  flex-wrap: nowrap;
-  align-self: flex-end;
-  margin-bottom: 44px; }
-  #verificar-entrega input, #verificar-entrega button {
-    height: 2rem;
-    line-height: 2rem; }
-  #verificar-entrega input {
-    width: 66.666%;
-    margin-right: 0;
-    font-size: .666rem;
-    padding-left: .5rem;
-    font-size: 14px;
-    text-align: center; }
-    #verificar-entrega input:focus {
-      outline-width: 0; }
-  #verificar-entrega button {
-    width: 33.333%;
-    margin-left: 0;
-    background-color: #f1ecf5; }
-
-#mapa {
-  width: calc(50% - 15px);
-  left: 0;
-  position: absolute;
-  height: 100%;
-  background-image: url("/img/mapa.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
 
 #despedida {
   background-color: #daebe3;

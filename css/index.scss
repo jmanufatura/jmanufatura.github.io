@@ -1,3 +1,11 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
 #capa-home, #historia, #produtos-capa, #eventos, #pontos-de-venda {
 	align-content: center;
 	justify-content: center;
@@ -51,7 +59,7 @@
 
 #historia {
 	.fundo {
-		background-image: url("/img/historia.jpg");
+		background-image: url("/img/historia-1.jpg");
 		min-height: calc(100vh - 170px);
 		margin-top: 32px;
 	}
@@ -72,6 +80,9 @@
 
 #historia, #pontos-de-venda {
 	min-height: calc(100vh - 57px);
+	#marcador {
+		margin-top: 48px;
+	}
 	.fundo {
 		background-size: cover;
 		background-position: center;
@@ -122,9 +133,11 @@
 	min-height: calc(100vh - 57px);
 	background-color: $branco;
 	align-items: center;
-	.produto {
+	.thumb-home {
 		figure {
-			background-color: roxo-claro;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
 			padding-bottom: 100%;
 			background-color: $amarelo-claro;
 		}
@@ -159,7 +172,7 @@
 #detalhes-entrega {
 	padding-bottom: 75px;
 	p, h6 {
-		text-align: center;
+		text-align: left;
 	}
 	h6 {
 		margin-top: 75px;
@@ -202,43 +215,4 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-#despedida {
-	background-color: $verde-claro;
-	text-align: center;
-	p {
-		line-height: 2rem;
-		margin-bottom: 0;
-	}
-}
-
-#info {
-	background-color: $vermelho-claro;
-	padding-bottom: 32px;
-	padding-top: 27px;
-	li {
-		list-style: none;
-	}
-	li, h6, a {
-		line-height: 22px;
-		font-size: 16px;
-	}
-	@media #{$phone} {
-		padding-top: 1rem;
-	}
-}
-
-
-@media #{$phone} {
-	#info {
-		li, h6 {
-			text-align: center;
-		}
-		li {
-			margin-bottom: 1.5rem;
-			border-bottom: 1px solid $azul-escuro;
-			padding-bottom: 1rem;
-		}
-	}
 }

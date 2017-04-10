@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9.94" height="9.59" viewBox="0 0 9.94 9.59">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>seta-proximo</title>
+  <g>
+    <polyline class="a" points="5.23 0.34 9.27 4.79 5.23 9.25"/>
+    <line class="a" x1="9.27" y1="4.79" y2="4.79"/>
+  </g>
+</svg>

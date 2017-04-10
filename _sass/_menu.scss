@@ -6,6 +6,17 @@
 	left: 0;
 	background-color: $branco;
 	z-index: 999;
+	#produto-anterior, #produto-proximo {
+		background-position: center;
+		background-size: 10px auto;
+		background-repeat: no-repeat;
+	}
+	#produto-anterior {
+		background-image: url('/img/seta-anterior.svg');
+	}
+	#produto-proximo {
+		background-image: url('/img/seta-proximo.svg');
+	}
 	.item {
 		cursor: pointer;
 		height: 57px;
@@ -54,16 +65,20 @@
 	#vitrine {
 		padding-top: 42px;
 		padding-bottom: 42px;
+		align-items: stretch;
 	}
 
-	.produto-thumb {
+	.thumb-header {
 		position: relative;
 		width: 170px;
 		justify-content: center;
 		figure {
 			padding-bottom: 100%;
-			background-color: $branco;
+			background-color: transparent;
 			margin-bottom: .5rem;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 		h6 {
 			text-align: center;
@@ -123,6 +138,45 @@
 		img {
 			height: 88px;
 			width: auto;
+		}
+	}
+}
+
+#despedida {
+	background-color: $verde-claro;
+	text-align: center;
+	p {
+		line-height: 2rem;
+		margin-bottom: 0;
+	}
+}
+
+#info {
+	background-color: $vermelho-claro;
+	padding-bottom: 32px;
+	padding-top: 27px;
+	li {
+		list-style: none;
+	}
+	li, h6, a {
+		line-height: 22px;
+		font-size: 16px;
+	}
+	@media #{$phone} {
+		padding-top: 1rem;
+	}
+}
+
+
+@media #{$phone} {
+	#info {
+		li, h6 {
+			text-align: center;
+		}
+		li {
+			margin-bottom: 1.5rem;
+			border-bottom: 1px solid $azul-escuro;
+			padding-bottom: 1rem;
 		}
 	}
 }
