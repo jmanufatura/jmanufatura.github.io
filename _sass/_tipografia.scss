@@ -9,7 +9,7 @@ body {
 }
 
 .negativo {
-	h1, h2, h3, h4, h5, h6, label, p, figcaption, input, button, li, a {
+	h1, h2, h3, h4, h5, h6, label, p, figcaption, input, textarea, button, li, a {
 		color: $branco;
 	}
 }
@@ -18,7 +18,21 @@ body {
 	font-family: 'HurmeGeometric', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.link {
+	font-size: 19px;
+	text-align: center;
+	line-height: 23px;
+	font-family: 'HurmeGeometric', sans-serif;
+	width: auto;
+	@media #{$mobile} {
+		font-size: .5rem;
+		letter-spacing: 1px;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+h1, h2, h3, h4, h5, h6, button {
 	font-family: 'HurmeGeometric', sans-serif;
 	text-align: center;
 	color: $azul-escuro;
@@ -39,9 +53,22 @@ h6 {
 	text-align: left;
 }
 
-label, p, figcaption, input, button, li {
+label, p, figcaption, input, li, textarea {
 	font-family: 'Questrial', sans-serif;
 	color: $azul-escuro;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999;
 }
 
 p {
@@ -55,8 +82,6 @@ p {
 }
 
 .botao {
-	font-family: 'HurmeGeometric', sans-serif;
-	font-feature-settings: "swsh" 1;
 	font-size: 17px;
 	line-height: 57px;
 }

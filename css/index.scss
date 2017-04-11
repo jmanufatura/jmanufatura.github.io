@@ -13,19 +13,6 @@
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
-	.link {
-		font-size: 19px;
-		text-align: center;
-		line-height: 23px;
-		font-family: 'HurmeGeometric', sans-serif;
-		width: auto;
-		@media #{$mobile} {
-			font-size: .5rem;
-			letter-spacing: 1px;
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
-	}
 }
 
 #capa-home{
@@ -151,7 +138,7 @@
 #eventos {
 	height: calc(100vh - 2rem);
 	//max-height: 100vw;
-	background-image: url("/img/eventos.jpg");
+	background-image: url("/img/eventos-home.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -185,13 +172,12 @@
 	align-self: flex-end;
 	margin-bottom: 44px;
 	input, button {
-		height: 2rem;
-		line-height: 2rem;
+		height: 29px;
+		line-height: 29px;
 	}
 	input {
 		width: 66.666%;
 		margin-right: 0;
-		font-size: .666rem;
 		padding-left: .5rem;
 		font-size: 14px;
 		text-align: center;

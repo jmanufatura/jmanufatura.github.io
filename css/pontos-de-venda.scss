@@ -1,0 +1,111 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
+#intro-pontos {
+	margin-top: 57px;
+	min-height: calc(100vh - 57px);
+	background-color: $roxo-claro;
+	position: relative;
+	padding-top: 92px;
+	padding-bottom: 92px;
+	align-content: center;
+	.info-quiosque {
+		margin-bottom: 75px;
+	}
+	h1 {
+		margin-bottom: 42px;
+	}
+	p {
+		&.grande {
+			text-align: center;
+			margin-bottom: 48px;
+		}
+		& + p {
+			margin-bottom: 24px;
+		}
+	}
+	h6 {
+		margin-bottom: 30px;
+	}
+	.ilustra {
+		position: absolute;
+		width: calc(50% - 15px);
+		margin: 0;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background-image: url("/img/pontos-capa.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+#nossos-pontos {
+	padding-top: 116px;
+	padding-bottom: 116px;
+	background-color: $branco;
+	h1 {
+		margin-bottom: 48px;
+	}
+	form {
+		input, textarea, button {
+			&:focus {
+				outline-width: 0;
+			}
+		}
+		input, textarea {
+			margin-bottom: 22px;
+			font-size: 15px;
+			padding-left: 15px;
+		}
+		input {
+			line-height: 29px;
+		}
+		textarea {
+			resize: none;
+			padding-top: 17px;
+			padding-bottom: 17px;
+			line-height: 22px;
+		}
+		p {
+			margin-bottom: 24px;
+			font-size: 15px;
+			line-height: 22px;
+		}
+		button {
+			height: 35px;
+			width: 140px;
+			font-size: 16px;
+			line-height: 100%;
+			background-color: transparent;
+			border: solid 2px $azul-escuro;
+			margin-left: auto;
+			margin-right: auto;
+			&:hover {
+				background-color: $azul-escuro;
+				border: none;
+				color: $roxo-claro;
+				cursor: pointer;
+			}
+		}
+	}
+	.ponto {
+		background-color: $vermelho-claro;
+		padding: 23px;
+		margin-bottom: 32px;
+		h6 {
+			margin-bottom: 32px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 22px;
+			margin-bottom: 48px; 
+		}
+	}
+}

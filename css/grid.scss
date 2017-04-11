@@ -293,6 +293,29 @@
 		
 	}
 
+	@media #{$mobile} {
+
+		@for $i from 1 through $subgrid {
+
+			.mobile-sub-#{$i} {
+				width: calc(100% - #{$phoneGutter});
+				margin-left: $phoneGutter/2;
+				margin-right: $phoneGutter/2;
+				@include subwrapper;
+				* {
+					@include subelement
+				}
+				> .subcol-mobile {
+			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$phoneGutter/$i});
+			        margin-left: 0;
+					margin-right: 0;
+			    }
+			}
+
+		}
+
+	}
+
 	@media #{$desktopUp} {
 
 		@for $i from 1 through $subgrid {
@@ -352,7 +375,7 @@
 		@for $i from 1 through $subgrid {
 
 			.large-sub-#{$i} {
-				width: calc(#{$largeColumn*$i} - #{$largeGutter});
+				width: calc(100% - #{$largeGutter});
 				margin-left: $largeGutter/2;
 				margin-right: $largeGutter/2;
 				@include subwrapper;

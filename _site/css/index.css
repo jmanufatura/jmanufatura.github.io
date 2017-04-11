@@ -4,18 +4,6 @@
   #capa-home h1, #historia h1, #produtos-capa h1, #eventos h1, #pontos-de-venda h1 {
     padding-left: 1rem;
     padding-right: 1rem; }
-  #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
-    font-size: 19px;
-    text-align: center;
-    line-height: 23px;
-    font-family: 'HurmeGeometric', sans-serif;
-    width: auto; }
-    @media all and (max-width: 64rem) {
-      #capa-home .link, #historia .link, #produtos-capa .link, #eventos .link, #pontos-de-venda .link {
-        font-size: .5rem;
-        letter-spacing: 1px;
-        padding-left: 2rem;
-        padding-right: 2rem; } }
 
 #capa-home {
   margin-top: 57px;
@@ -110,7 +98,7 @@
 
 #eventos {
   height: calc(100vh - 2rem);
-  background-image: url("/img/eventos.jpg");
+  background-image: url("/img/eventos-home.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
@@ -137,12 +125,11 @@
   align-self: flex-end;
   margin-bottom: 44px; }
   #verificar-entrega input, #verificar-entrega button {
-    height: 2rem;
-    line-height: 2rem; }
+    height: 29px;
+    line-height: 29px; }
   #verificar-entrega input {
     width: 66.666%;
     margin-right: 0;
-    font-size: .666rem;
     padding-left: .5rem;
     font-size: 14px;
     text-align: center; }

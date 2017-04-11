@@ -1,0 +1,108 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
+#intro-eventos {
+	margin-top: 57px;
+	background-color: $vermelho-claro;
+	padding-top: 92px;
+	position: relative;
+	h1 {
+		margin-bottom: 42px;
+	}
+	p {
+		margin-bottom: 70px;
+		&.grande {
+			text-align: center;
+			margin-bottom: 75px;
+		}
+	}
+	h6 {
+		margin-bottom: 30px;
+	}
+	a {
+		margin-bottom: 70px;
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+		span {
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				height: 3px;
+				width: 100%;
+				left: 0;
+				bottom: -8px;
+				background-color: $azul-escuro;
+			}
+		}
+	}
+	.ilustra {
+		position: absolute;
+		width: calc(50% - 15px);
+		margin: 0;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background-image: url("/img/eventos-ilustra.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+#contato {
+	padding-top: 116px;
+	padding-bottom: 116px;
+	background-color: $roxo-claro;
+	h1 {
+		margin-bottom: 48px;
+	}
+	form {
+		input, textarea, button {
+			&:focus {
+				outline-width: 0;
+			}
+		}
+		input, textarea {
+			margin-bottom: 22px;
+			font-size: 15px;
+			padding-left: 15px;
+		}
+		input {
+			line-height: 29px;
+		}
+		textarea {
+			resize: none;
+			padding-top: 17px;
+			padding-bottom: 17px;
+			line-height: 22px;
+		}
+		p {
+			margin-bottom: 24px;
+			font-size: 15px;
+			line-height: 22px;
+		}
+		button {
+			height: 35px;
+			width: 140px;
+			font-size: 16px;
+			line-height: 100%;
+			background-color: transparent;
+			border: solid 2px $azul-escuro;
+			margin-left: auto;
+			margin-right: auto;
+			&:hover {
+				background-color: $azul-escuro;
+				border: none;
+				color: $roxo-claro;
+				cursor: pointer;
+			}
+		}
+	}
+}

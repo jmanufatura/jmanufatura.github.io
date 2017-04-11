@@ -1,0 +1,78 @@
+#intro-pontos {
+  margin-top: 57px;
+  min-height: calc(100vh - 57px);
+  background-color: #f1ecf5;
+  position: relative;
+  padding-top: 92px;
+  padding-bottom: 92px;
+  align-content: center; }
+  #intro-pontos .info-quiosque {
+    margin-bottom: 75px; }
+  #intro-pontos h1 {
+    margin-bottom: 42px; }
+  #intro-pontos p.grande {
+    text-align: center;
+    margin-bottom: 48px; }
+  #intro-pontos p + p {
+    margin-bottom: 24px; }
+  #intro-pontos h6 {
+    margin-bottom: 30px; }
+  #intro-pontos .ilustra {
+    position: absolute;
+    width: calc(50% - 15px);
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: url("/img/pontos-capa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+
+#nossos-pontos {
+  padding-top: 116px;
+  padding-bottom: 116px;
+  background-color: #fff; }
+  #nossos-pontos h1 {
+    margin-bottom: 48px; }
+  #nossos-pontos form input:focus, #nossos-pontos form textarea:focus, #nossos-pontos form button:focus {
+    outline-width: 0; }
+  #nossos-pontos form input, #nossos-pontos form textarea {
+    margin-bottom: 22px;
+    font-size: 15px;
+    padding-left: 15px; }
+  #nossos-pontos form input {
+    line-height: 29px; }
+  #nossos-pontos form textarea {
+    resize: none;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    line-height: 22px; }
+  #nossos-pontos form p {
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 22px; }
+  #nossos-pontos form button {
+    height: 35px;
+    width: 140px;
+    font-size: 16px;
+    line-height: 100%;
+    background-color: transparent;
+    border: solid 2px #002831;
+    margin-left: auto;
+    margin-right: auto; }
+    #nossos-pontos form button:hover {
+      background-color: #002831;
+      border: none;
+      color: #f1ecf5;
+      cursor: pointer; }
+  #nossos-pontos .ponto {
+    background-color: #f5e5e0;
+    padding: 23px;
+    margin-bottom: 32px; }
+    #nossos-pontos .ponto h6 {
+      margin-bottom: 32px; }
+    #nossos-pontos .ponto p {
+      font-size: 15px;
+      line-height: 22px;
+      margin-bottom: 48px; }
