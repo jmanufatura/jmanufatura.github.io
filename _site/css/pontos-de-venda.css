@@ -34,7 +34,8 @@
   padding-bottom: 116px;
   background-color: #fff; }
   #nossos-pontos h1 {
-    margin-bottom: 48px; }
+    margin-bottom: 69px;
+    text-align: left; }
   #nossos-pontos form input:focus, #nossos-pontos form textarea:focus, #nossos-pontos form button:focus {
     outline-width: 0; }
   #nossos-pontos form input, #nossos-pontos form textarea {
