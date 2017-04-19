@@ -1,0 +1,20 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
+#carrinho {
+	padding-top: 57px;
+	background-color: $amarelo-claro;
+	.fundo-branco {
+		background-color: $branco;
+	}
+	.produto {
+		height: 200px;
+		background-color: $amarelo-claro;
+		margin-bottom: 12px;
+	}
+}

@@ -74,7 +74,7 @@
 				</div>
 				<a href="" class="desktop-1" id="produto-proximo"></a>
 			</div>
-			<div class="wrapper botao" id="ver-encomendas"><a href="">ver minhas encomendas →</a></div>
+			<div class="wrapper botao" id="ver-encomendas"><a href="/encomendas">ver minhas encomendas →</a></div>
 		</div>
 	</nav>
 </header>
@@ -183,9 +183,9 @@
 
 <section class="wrapper" id="entregas">
 	<div id="mapa"></div>
-	<form id="verificar-entrega" class="desktop-5 desktop-right-1">
+	<form id="verificar-entrega" class="desktop-5 desktop-right-1" onsubmit="return validateForm()" action="" method="post">
 		<input type="text" pattern="[0-9]{8}" maxlength="8" name="" placeholder="Digite seu CEP para checar possibilidade de entrega" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu CEP para checar possibilidade de entrega'">
-		<button name="Verificar" class="botao" type="submit" onsubmit="return false;">checar ↘</button>
+		<button name="Verificar" class="botao" type="submit">checar ↘</button>
 	</form>
 	<div class="desktop-left-1 desktop-4 desktop-right-1" id="detalhes-entrega">
 		<h6>Prazos de Entrega</h6>

@@ -424,6 +424,128 @@
 
 	}
 
+	@for $i from 2 through $subgrid {
+		.subwrapper-#{$i} {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			align-content: flex-start;
+			$column: 100%/$i;
+			@media #{$phone} {
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.phone-#{$j} {
+							width: calc(#{$column*$j} - #{$phoneGutter});
+							margin-left: $phoneGutter/2;
+							margin-right: $phoneGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+					@else {
+						.phone-#{$j} {
+							width: 100%;
+							margin-left: $phoneGutter/2;
+							margin-right: $phoneGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+				}
+			}
+			@media #{$tablet} {
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.tablet-#{$j} {
+							width: calc(#{$column*$j} - #{$tabletGutter});
+							margin-left: $tabletGutter/2;
+							margin-right: $tabletGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+					@else {
+						.tablet-#{$j} {
+							width: 100%;
+							margin-left: $tabletGutter/2;
+							margin-right: $tabletGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+				}
+			}
+			@media #{$desktop} {
+				margin-left: -$desktopGutter/2;
+				margin-right: -$desktopGutter/2;
+				width: calc(100% + #{$desktopGutter});
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.desktop-#{$j} {
+							width: calc(#{$column*$j} - #{$desktopGutter});
+							margin-left: $desktopGutter/2;
+							margin-right: $desktopGutter/2;
+							* {
+								@include subelement
+							}
+						}
+						.desktop-left-#{$j} {
+							margin-left: calc(#{$j*$column} + #{$desktopGutter/2});
+							* {
+								@include subelement
+							}
+						}
+						.desktop-right-#{$j} {
+							margin-right: calc(#{$j*$column} + #{$desktopGutter/2});
+							* {
+								@include subelement
+							}
+						}
+					}
+					@else {
+						.desktop-#{$j} {
+							width: 100%;
+							margin-left: $desktopGutter/2;
+							margin-right: $desktopGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+				}
+			}
+			@media #{$largeUp} {
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.large-#{$j} {
+							width: calc(#{$column*$j} - #{$largeGutter});
+							margin-left: $largeGutter/2;
+							margin-right: $largeGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+					@else {
+						.large-#{$j} {
+							width: 100%;
+							margin-left: $largeGutter/2;
+							margin-right: $largeGutter/2;
+							* {
+								@include subelement
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.subwrapper {
 		@include subwrapper;
 	}
