@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="21px" viewBox="0 0 17 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>cesta</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Phone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HOME" transform="translate(-288.000000, -11.000000)" stroke="#002831">
+            <g id="cesta" transform="translate(288.500000, 11.500000)">
+                <polygon id="Stroke-1" points="0 20 15.0235 20 15.0235 4.9765 0 4.9765"></polygon>
+                <path d="M7.5117,20 L7.5117,4.9765 C7.5117,3.709 6.7137,0 3.8587,0 C0.3847,0 1.2677,4.9765 6.5727,4.9765" id="Stroke-3"></path>
+                <path d="M7.5117,4.97655 C7.5117,3.70905 8.3097,5e-05 11.1647,5e-05 C14.6392,5e-05 13.7557,4.97655 8.4507,4.97655" id="Stroke-4"></path>
+            </g>
+        </g>
+    </g>
+</svg>

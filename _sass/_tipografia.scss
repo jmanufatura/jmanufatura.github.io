@@ -44,8 +44,8 @@ h1 {
 	line-height: 40px;
 	margin-bottom: .5rem;
 	@media #{$mobile} {
-		font-size: 1.5rem;
-		line-height: 2rem;
+		font-size: 25px;
+		line-height: 30px;
 	}
 }
 
@@ -76,12 +76,12 @@ p {
 	line-height: 20px;
 	margin-bottom: 11px;
 	&.grande {
-		font-size: 25px;
-		line-height: 30px;
+		font-size: 20px;
+		line-height: 24px;
 	}
 }
 
 .botao {
-	font-size: 17px;
-	line-height: 57px;
+	font-size: 14px;
+	line-height: 49px;
 }

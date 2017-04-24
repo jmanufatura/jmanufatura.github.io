@@ -9,3 +9,8 @@ baseurl: ""
 url: "http://bolodaivone.com.br"
 
 markdown: kramdown
+
+sass:
+    style: compressed
+
+port: 3000

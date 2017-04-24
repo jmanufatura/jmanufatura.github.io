@@ -6,43 +6,96 @@
 	"cores"
 ;
 
-#intro-pontos {
-	margin-top: 57px;
-	min-height: calc(100vh - 57px);
-	background-color: $roxo-claro;
-	position: relative;
-	padding-top: 92px;
-	padding-bottom: 92px;
-	align-content: center;
-	.info-quiosque {
-		margin-bottom: 75px;
-	}
-	h1 {
-		margin-bottom: 42px;
-	}
-	p {
-		&.grande {
-			text-align: center;
-			margin-bottom: 48px;
-		}
-		& + p {
-			margin-bottom: 24px;
-		}
-	}
-	h6 {
-		margin-bottom: 30px;
-	}
+#intro-phone {
+	margin-top: 72px;
+	padding-top: 30px;
+	background-color: $verde-claro;
+	height: calc(100vh - 57px);
 	.ilustra {
-		position: absolute;
-		width: calc(50% - 15px);
-		margin: 0;
-		top: 0;
-		left: 0;
-		height: 100%;
 		background-image: url("/img/pontos-capa.jpg");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		z-index: 0;
+		@media #{$phone} {
+			height: calc(100vh - 263px);
+			margin-bottom: 26px;
+		}
+	}
+}
+
+#intro-pontos {
+	margin-top: 57px;
+	min-height: calc(100vh - 114px);
+	background-color: $verde-claro;
+	position: relative;
+	padding-top: 92px;
+	padding-bottom: 92px;
+	align-content: center;
+
+	@media #{$phone} {
+		padding-top: 30px;
+		margin-top: 0;
+		background-color: $branco;
+	}
+	.ilustra {
+		background-image: url("/img/pontos-capa.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 0;
+		@media #{$tabletUp} {
+			position: absolute;
+			width: calc(50% - 15px);
+			margin: 0;
+			top: 0;
+			left: 0;
+			height: 100%;
+		}
+	}
+	.conteudo {
+		align-self: center;
+		z-index: 1;
+		.info-quiosque {
+			margin-bottom: 75px;
+			@media #{$phone} {
+				margin-bottom: 25px;
+			}
+		}
+		h1 {
+			margin-bottom: 42px;
+		}
+		p {
+			&.grande {
+				text-align: center;
+				margin-bottom: 48px;
+				@media #{$phone} {
+					text-align: left;
+				}
+			}
+			& + p {
+				margin-bottom: 24px;
+				@media #{$phone} {
+					margin-bottom: 0;
+				}
+			}
+		}
+		h6 {
+			margin-bottom: 30px;
+			@media #{$phone} {
+				margin-bottom: 16px;
+			}
+		}
+	}
+	.quiosque {
+		@media #{$phone} {
+			background-color: $verde-claro;
+			padding: 15px;
+			h6, p {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
 	}
 }
 
@@ -97,7 +150,7 @@
 		}
 	}
 	.ponto {
-		background-color: $vermelho-claro;
+		background-color: $verde-claro;
 		padding: 23px;
 		margin-bottom: 32px;
 		h6 {

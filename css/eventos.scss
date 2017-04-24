@@ -10,6 +10,7 @@
 	margin-top: 57px;
 	background-color: $vermelho-claro;
 	padding-top: 92px;
+	padding-bottom: 70px;
 	position: relative;
 	h1 {
 		margin-bottom: 42px;
@@ -25,10 +26,10 @@
 		margin-bottom: 30px;
 	}
 	a {
-		margin-bottom: 70px;
 		width: auto;
 		margin-left: auto;
 		margin-right: auto;
+		display: block;
 		span {
 			position: relative;
 			&::after {
@@ -68,11 +69,13 @@
 			&:focus {
 				outline-width: 0;
 			}
+			display: block;
 		}
 		input, textarea {
 			margin-bottom: 22px;
 			font-size: 15px;
 			padding-left: 15px;
+			width: 100%;
 		}
 		input {
 			line-height: 29px;

@@ -1,4 +1,5 @@
 #menu {
+
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	position: fixed;
@@ -6,6 +7,46 @@
 	left: 0;
 	background-color: $branco;
 	z-index: 999;
+	@media #{$phone} {
+		height: 72px;
+	}
+
+	#home-phone {
+		margin: auto;
+		img {
+			height: 36px;
+			width: auto;
+		}
+	}
+
+	#cesta {
+		@media #{$phone} {
+			position: absolute;
+			display: block;
+			right: 34px;
+			align-self: center;
+			img {
+				width: 16px;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+
+	#icone-menu {
+		@media #{$phone} {
+			position: absolute;
+			display: block;
+			left: 24px;
+			align-self: center;
+			svg {
+				width: 26px;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+
 	#produto-anterior, #produto-proximo {
 		background-position: center;
 		background-size: 10px auto;
@@ -36,9 +77,11 @@
 		&:last-child {
 			margin-right: 15px;
 		}
-		.botao {
+		.botao-menu {
 			font-family: 'HurmeGeometric', sans-serif;
 			font-feature-settings: "swsh" 1;
+			font-size: 17px;
+			line-height: 57px;
 		}
 	}
 	#botao-encomendar {
@@ -49,6 +92,7 @@
 			background-color: $amarelo-claro;
 			#menu-dropdown {
 				display: flex;
+				flex-wrap: wrap;
 			}
 		}
 	}
@@ -66,6 +110,9 @@
 		padding-top: 42px;
 		padding-bottom: 42px;
 		align-items: stretch;
+		.subwrapper {
+			justify-content: space-between;
+		}
 	}
 
 	.thumb-header {
@@ -130,14 +177,14 @@
 	.simbolo {
 		margin-bottom: 32px;
 		justify-content: center;
-		padding-left: 45px;
+		padding-left: 34px;
 		a {
 			pointer-events: all;
 			width: auto;
 		}
 		img {
 			height: 88px;
-			width: auto;
+			width: 100%;
 		}
 	}
 }
@@ -177,6 +224,34 @@
 			margin-bottom: 1.5rem;
 			border-bottom: 1px solid $azul-escuro;
 			padding-bottom: 1rem;
+		}
+	}
+	#menu-phone {
+		height: calc(100vh - 72px);
+		position: fixed;
+		top: 72px;
+		left: 0;
+		z-index: 3;
+		background-color: $branco;
+		align-content: center;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity .1s ease-in-out;
+		&.aberto {
+			opacity: 1;
+			pointer-events: all;
+		}
+		a {
+			line-height: 39px;
+			margin-bottom: 39px;
+			font-size: 20px;
+			font-family: 'HurmeGeometric', sans-serif;
+			text-align: center;
+			color: $azul-escuro;
+			font-feature-settings: "swsh" 1;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

@@ -7,7 +7,7 @@
 ;
 
 #capa-produtos {
-	height: calc(100vh - 57px);
+	height: calc(100vh - 114px);
 	max-height: 100vw;
 	margin-top: 57px;
 	background-image: url("/img/capa-produtos.jpg");
@@ -36,12 +36,25 @@
 	.info {
 		justify-content: center;
 		align-content: space-between;
+		display: flex;
+    	flex-wrap: wrap;
+    	margin-bottom: 56px;
+    	margin-top: 51px;
 		div {
 			justify-content: center;
+			text-align: center;
+		}
+		.desc {
+			margin-bottom: 20px;
 		}
 		.nome {
-			margin-top: 51px;
 			margin-bottom: 38px;
+		}
+		.tamanho {
+			margin-bottom: 20px;
+		}
+		.quantidade {
+			margin-bottom: 26px;
 		}
 		.encomendar {
 			font-family: 'HurmeGeometric', sans-serif;
@@ -51,7 +64,6 @@
 			width: auto;
 			color: $azul-escuro;
 			position: relative;
-			margin-bottom: 56px;
 			&:hover {
 				&:after {
 					content: "";

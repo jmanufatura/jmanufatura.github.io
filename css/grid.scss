@@ -9,598 +9,871 @@
 	margin: 0;
 	padding: 0;
 	border: none;
-	width: 100%;
 	box-sizing: border-box;
-}
-
-@mixin container {
-	width: 100%;
-	position: relative;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: flex-start;
-}
-
-@mixin wrapper {
-	width: 100%;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: flex-start;
-	@media #{$phone} {
-		padding-left: $phoneGutter / 2;
-		padding-right: $phoneGutter / 2;
-	}
-	@media #{$tabletUp} {
-		$tabletPadding: ( 100% - $tabletWrapper ) / 2 ;
-		padding-left: calc(#{$tabletPadding} - #{$tabletGutter / 2});
-		padding-right: calc(#{$tabletPadding} - #{$tabletGutter / 2});
-	}
-	@media #{$desktopUp} {
-		$desktopPadding: ( 100% - $desktopWrapper ) / 2 ;
-		padding-left: calc(#{$desktopPadding} - #{$desktopGutter / 2});
-		padding-right: calc(#{$desktopPadding} - #{$desktopGutter / 2});
-	}
-	@media #{$largeUp} {
-		$largePadding: ( 100% - $largeWrapper ) / 2 ;
-		padding-left: calc(#{$largePadding} - #{$largeGutter / 2});
-		padding-right: calc(#{$largePadding} - #{$largeGutter / 2});
-	}
-}
-
-@mixin element {
-	@media #{$phone} {
-		width: calc(100% - #{$phoneGutter});
-		margin-left: $phoneGutter/2;
-		margin-right: $phoneGutter/2;
-	}
-	@media #{$tabletUp} {
-		width: calc(100% - #{$tabletGutter});
-		margin-left: $tabletGutter/2;
-		margin-right: $tabletGutter/2;
-	}
-	@media #{$desktopUp} {
-		width: calc(100% - #{$desktopGutter});
-		margin-left: $desktopGutter/2;
-		margin-right: $desktopGutter/2;
-	}
-	@media #{$largeUp} {
-		width: calc(100% - #{$largeGutter});
-		margin-left: $largeGutter/2;
-		margin-right: $largeGutter/2;
-	}
-}
-
-@mixin subwrapper {
-	display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
-}
-
-@mixin subelement {
-	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.container, body, main {
-	@include container;
+	overflow-x: hidden;
 }
 
 .wrapper {
 
-	@include wrapper;
-
-	article, form, fieldset,
-	datalist, select, optgroup,
-	nav, div, aside, ul, ol {
-		@include container;
-	}
-
-	section, main, footer, header {
-		section, main, footer, header {
-			@include container;
-		}
-	}
-
-	h1, h2, h3, h4, h5, h6, p, img, blockquote, audio,
-	video, hr, br, wbr, ul > *, ol > *, figure, dl, legend, input,
-	textarea, button, output, option, meter, progress {
-		@include element;
-		* {
-			@include subelement
-		}
-	}
-
-	.element {
-		@media #{$phone} {
-			margin-left: $phoneGutter/2;
-			margin-right: $phoneGutter/2;
-		}
-		@media #{$tabletUp} {
-			margin-left: $tabletGutter/2;
-			margin-right: $tabletGutter/2;
-		}
-		@media #{$desktopUp} {
-			margin-left: $desktopGutter/2;
-			margin-right: $desktopGutter/2;
-		}
-		@media #{$largeUp} {
-			margin-left: $largeGutter/2;
-			margin-right: $largeGutter/2;
-		}
-	}
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
 
 	@for $i from 1 through $subgrid {
-		.sub-#{$i} {
-			width: calc(100% - #{$defaultGutter});
-			margin-left: $defaultGutter/2;
-			margin-right: $defaultGutter/2;
-			@include subwrapper;
-			* {
-				@include subelement
-			}
-			> .subcol {
-		        width: calc(#{percentage(1/$i)} - #{($i - 1)*$defaultGutter/$i});
-		        margin-left: 0;
-				margin-right: 0;
-		    }
-		}
-	}
-
-	@media #{$phone} {
-		.phone-0 {
-			display: none;
-		}
-	}
-
-	@media #{$mobile} {
-		.mobile-0 {
-			display: none;
-		}
-	}
-
-	@media #{$tabletUp} {
-		.tablet-0 {
-			display: none;
-		}
-	}
-
-	@media #{$desktopUp} {
-		.desktop-0 {
-			display: none;
-		}
-	}
-
-	@media #{$largeUp} {
-		.large-0 {
-			display: none;
-		}
-	}
-
-	@media #{$phone} {
-
-		@for $i from 1 through $subgrid {
-
-			.phone-sub-#{$i} {
-				width: calc(100% - #{$phoneGutter});
-				margin-left: $phoneGutter/2;
-				margin-right: $phoneGutter/2;
-				@include subwrapper;
-				* {
-					@include subelement
-				}
-				> .subcol-phone {
-			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$phoneGutter/$i});
-			        margin-left: 0;
-					margin-right: 0;
-			    }
-			}
-
-		}
-
-		@for $i from 1 through $phoneGrid {
-
-			.phone-#{$i} {
-				width: calc(#{$phoneColumn*$i} - #{$phoneGutter});
-				margin-left: $phoneGutter/2;
-				margin-right: $phoneGutter/2;
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-		@for $i from 1 through $phoneGrid - 1 {
-
-			.phone-left-#{$i} {
-				margin-left: calc(#{$i*$phoneColumn} + #{$phoneGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-			.phone-right-#{$i} {
-				margin-right: calc(#{$i*$phoneColumn} + #{$phoneGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-	}
-
-	@media #{$tabletUp} {
-
-		@for $i from 1 through $subgrid {
-
-			.tablet-sub-#{$i} {
-				width: calc(100% - #{$tabletGutter});
-				margin-left: $tabletGutter/2;
-				margin-right: $tabletGutter/2;
-				@include subwrapper;
-				* {
-					@include subelement
-				}
-				> .subcol-tablet {
-			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$tabletGutter/$i});
-			        margin-left: 0;
-					margin-right: 0;
-			    }
-			}
-
-		}
-
-		@for $i from 1 through $tabletGrid {
-
-			.tablet-#{$i} {
-				width: calc(#{$tabletColumn*$i} - #{$tabletGutter});
-				margin-left: $tabletGutter/2;
-				margin-right: $tabletGutter/2;
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-		@for $i from 1 through $tabletGrid - 1 {
-
-			.tablet-left-#{$i} {
-				margin-left: calc(#{$i*$tabletColumn} + #{$tabletGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-			.tablet-right-#{$i} {
-				margin-right: calc(#{$i*$tabletColumn} + #{$tabletGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-		}
-		
-	}
-
-	@media #{$mobile} {
-
-		@for $i from 1 through $subgrid {
-
-			.mobile-sub-#{$i} {
-				width: calc(100% - #{$phoneGutter});
-				margin-left: $phoneGutter/2;
-				margin-right: $phoneGutter/2;
-				@include subwrapper;
-				* {
-					@include subelement
-				}
-				> .subcol-mobile {
-			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$phoneGutter/$i});
-			        margin-left: 0;
-					margin-right: 0;
-			    }
-			}
-
-		}
-
-	}
-
-	@media #{$desktopUp} {
-
-		@for $i from 1 through $subgrid {
-
-			.desktop-sub-#{$i} {
-				width: calc(100% - #{$desktopGutter});
-				margin-left: $desktopGutter/2;
-				margin-right: $desktopGutter/2;
-				@include subwrapper;
-				* {
-					@include subelement
-				}
-			    > .subcol-desktop {
-			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$desktopGutter/$i});
-			        margin-left: 0;
-					margin-right: 0;
-			    }
-			}
-
-		}
-
-		@for $i from 1 through $desktopGrid {
-
-			.desktop-#{$i} {
-				width: calc(#{$desktopColumn*$i} - #{$desktopGutter});
-				margin-left: $desktopGutter/2;
-				margin-right: $desktopGutter/2;
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-		@for $i from 1 through $desktopGrid - 1 {
-
-			.desktop-left-#{$i} {
-				margin-left: calc(#{$i*$desktopColumn} + #{$desktopGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-			.desktop-right-#{$i} {
-				margin-right: calc(#{$i*$desktopColumn} + #{$desktopGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-	}
-
-	@media #{$largeUp} {
-
-		@for $i from 1 through $subgrid {
-
-			.large-sub-#{$i} {
-				width: calc(100% - #{$largeGutter});
-				margin-left: $largeGutter/2;
-				margin-right: $largeGutter/2;
-				@include subwrapper;
-				* {
-					@include subelement
-				}
-				> .subcol-large {
-			        width: calc(#{percentage(1/$i)} - #{($i - 1)*$largeGutter/$i});
-			        margin-left: 0;
-					margin-right: 0;
-			    }
-			}
-
-		}
-
-		@for $i from 1 through $largeGrid {
-
-			.large-#{$i} {
-				width: calc(#{$largeColumn*$i} - #{$largeGutter});
-				margin-left: $largeGutter/2;
-				margin-right: $largeGutter/2;
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-		@for $i from 1 through $largeGrid - 1 {
-
-			.large-left-#{$i} {
-				margin-left: calc(#{$i*$largeColumn} + #{$largeGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-			.large-right-#{$i} {
-				margin-right: calc(#{$i*$largeColumn} + #{$largeGutter/2});
-				* {
-					@include subelement
-				}
-			}
-
-		}
-
-	}
-
-	@for $i from 2 through $subgrid {
 		.subwrapper-#{$i} {
+
+			$subcol: 100%/$i;
+
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: flex-start;
 			align-items: flex-start;
 			align-content: flex-start;
-			$column: 100%/$i;
-			@media #{$phone} {
-				@for $j from 1 through $subgrid {
-					@if $j < $i {
-						.phone-#{$j} {
-							width: calc(#{$column*$j} - #{$phoneGutter});
-							margin-left: $phoneGutter/2;
-							margin-right: $phoneGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-					@else {
-						.phone-#{$j} {
-							width: 100%;
-							margin-left: $phoneGutter/2;
-							margin-right: $phoneGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-				}
-			}
-			@media #{$tablet} {
-				@for $j from 1 through $subgrid {
-					@if $j < $i {
-						.tablet-#{$j} {
-							width: calc(#{$column*$j} - #{$tabletGutter});
-							margin-left: $tabletGutter/2;
-							margin-right: $tabletGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-					@else {
-						.tablet-#{$j} {
-							width: 100%;
-							margin-left: $tabletGutter/2;
-							margin-right: $tabletGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-				}
-			}
-			@media #{$desktop} {
-				margin-left: -$desktopGutter/2;
-				margin-right: -$desktopGutter/2;
-				width: calc(100% + #{$desktopGutter});
-				@for $j from 1 through $subgrid {
-					@if $j < $i {
-						.desktop-#{$j} {
-							width: calc(#{$column*$j} - #{$desktopGutter});
-							margin-left: $desktopGutter/2;
-							margin-right: $desktopGutter/2;
-							* {
-								@include subelement
-							}
-						}
-						.desktop-left-#{$j} {
-							margin-left: calc(#{$j*$column} + #{$desktopGutter/2});
-							* {
-								@include subelement
-							}
-						}
-						.desktop-right-#{$j} {
-							margin-right: calc(#{$j*$column} + #{$desktopGutter/2});
-							* {
-								@include subelement
-							}
-						}
-					}
-					@else {
-						.desktop-#{$j} {
-							width: 100%;
-							margin-left: $desktopGutter/2;
-							margin-right: $desktopGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-				}
-			}
-			@media #{$largeUp} {
-				@for $j from 1 through $subgrid {
-					@if $j < $i {
-						.large-#{$j} {
-							width: calc(#{$column*$j} - #{$largeGutter});
-							margin-left: $largeGutter/2;
-							margin-right: $largeGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-					@else {
-						.large-#{$j} {
-							width: 100%;
-							margin-left: $largeGutter/2;
-							margin-right: $largeGutter/2;
-							* {
-								@include subelement
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+			margin-left: - $defaultGutter / 2;
+			margin-right: - $defaultGutter / 2;
+			width: calc(100% + #{$defaultGutter});
 
-	.subwrapper {
-		@include subwrapper;
-	}
+			> * {
+				margin-left: $defaultGutter/2;
+				margin-right: $defaultGutter/2;
+			}
 
-	.justify {
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		* {
-			width: auto;
-			display: block;
+			@for $j from 1 through $subgrid {
+				@if $j == $i {
+					.subcol-#{$j} {
+						width: $subcol*$j;
+						margin-left: $defaultGutter / 2;
+						margin-right: $defaultGutter / 2;
+					}
+				}
+				@if $j < $i {
+					.subcol-#{$j} {
+						width: calc(#{$subcol*$j} - #{$defaultGutter});
+						margin-left: $defaultGutter / 2;
+						margin-right: $defaultGutter / 2;
+					}
+				}
+			}
+
+			@for $j from 1 through $subgrid {
+				@if $j < $i {
+					.subcol-left-#{$j} {
+						margin-left: calc(#{$j*$subcol} + #{$defaultGutter/2});
+					}
+					.subcol-right-#{$j} { 
+						margin-right: calc(#{$j*$subcol} + #{$defaultGutter/2});
+					}
+				}
+			}
 		}
 	}
 
 	@media #{$phone} {
-		.justify-phone {
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			* {
-				width: auto;
-				display: block;
+
+		padding-left: $phonePadding;
+		padding-right: $phonePadding;
+
+		> .phone-0 { display: none; }
+
+		@for $i from 1 through $phoneGrid {
+			$k : $phoneGrid - $i + 1;
+			$subcol: 100%/$k;
+			//.phone-#{$k}:not(.subwrapper) {
+
+			.phone-#{$k} {
+
+				width: calc(#{$phoneColumn*$k} - #{$phoneGutter}) ;
+				margin-left: $phoneGutter / 2;
+				margin-right: $phoneGutter / 2;
+
+				.subwrapper {
+
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: flex-start;
+					align-content: flex-start;
+					margin-left: - $phoneGutter / 2;
+					margin-right: - $phoneGutter / 2;
+					width: calc(100% + #{$phoneGutter});
+
+					> * {
+						margin-left: $phoneGutter/2;
+						margin-right: $phoneGutter/2;
+					}
+
+					> .phone-0 { 
+						display: none; 
+					}
+
+					@for $j from 1 through $phoneGrid {
+						@if $j == $k {
+							.phone-#{$j} {
+								width: calc(#{$subcol*$j} - #{$phoneGutter});
+								margin-left: $phoneGutter / 2;
+								margin-right: $phoneGutter / 2;
+							}
+						}
+						@if $j < $k {
+							.phone-#{$j} {
+								width: calc(#{$subcol*$j} - #{$phoneGutter});
+								margin-left: $phoneGutter / 2;
+								margin-right: $phoneGutter / 2;
+							}
+						}
+					}
+
+					@for $j from 1 through $phoneGrid {
+						@if $j < $k {
+							.phone-left-#{$j} {
+								margin-left: calc(#{$j*$subcol} + #{$phoneGutter/2});
+							}
+							.phone-right-#{$j} { 
+								margin-right: calc(#{$j*$subcol} + #{$phoneGutter/2});
+							}
+						}
+					}
+
+					&.justify-phone {
+						flex-wrap: nowrap;
+					    justify-content: space-between;
+					}
+
+					@for $i from 1 through $subgrid {
+						.phone-sub-#{$i} {
+
+							$subcol: 100%/$i;
+
+							display: flex;
+							flex-flow: row wrap;
+							justify-content: flex-start;
+							align-items: flex-start;
+							align-content: flex-start;
+							margin-left: - $phoneGutter / 2;
+							margin-right: - $phoneGutter / 2;
+							width: calc(100% + #{$phoneGutter});
+
+							> .phone-0 { display: none; }
+
+							@for $j from 1 through $subgrid {
+								@if $j == $i {
+									.phone-#{$j} {
+										width: $subcol*$j;
+										margin-left: $phoneGutter / 2;
+										margin-right: $phoneGutter / 2;
+									}
+								}
+								@if $j < $i {
+									.phone-#{$j} {
+										width: calc(#{$subcol*$j} - #{$phoneGutter});
+										margin-left: $phoneGutter / 2;
+										margin-right: $phoneGutter / 2;
+									}
+								}
+							}
+
+							@for $j from 1 through $subgrid {
+								@if $j < $i {
+									.phone-left-#{$j} {
+										margin-left: calc(#{$j*$subcol} + #{$phoneGutter/2});
+									}
+									.phone-right-#{$j} { 
+										margin-right: calc(#{$j*$subcol} + #{$phoneGutter/2});
+									}
+								}
+							}
+
+							&.justify-phone {
+								flex-wrap: nowrap;
+							    justify-content: space-between;
+							}
+
+						}
+					}
+
+				}
 			}
+		}
+
+		@for $i from 1 through $phoneGrid - 1 {
+			.phone-left-#{$i} { 
+				margin-left: calc(#{$i*$phoneColumn} + #{$phoneGutter / 2});
+				&.wrapper {
+					margin-left: $i*$phoneColumn;
+				}
+			}
+			.phone-right-#{$i} { 
+				margin-right: calc(#{$i*$phoneColumn} + #{$phoneGutter / 2});
+				&.wrapper {
+					margin-right: $i*$phoneColumn;
+				}
+			}
+		}
+
+		@for $i from 1 through $subgrid {
+			.phone-sub-#{$i} {
+
+				$subcol: 100%/$i;
+
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				margin-left: - $phoneGutter / 2;
+				margin-right: - $phoneGutter / 2;
+				width: calc(100% + #{$phoneGutter});
+
+				> .phone-0 { display: none; }
+
+				@for $j from 1 through $subgrid {
+					@if $j == $i {
+						.phone-#{$j} {
+							width: $subcol*$j;
+							margin-left: $phoneGutter / 2;
+							margin-right: $phoneGutter / 2;
+						}
+					}
+					@if $j < $i {
+						.phone-#{$j} {
+							width: calc(#{$subcol*$j} - #{$phoneGutter});
+							margin-left: $phoneGutter / 2;
+							margin-right: $phoneGutter / 2;
+						}
+					}
+				}
+
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.phone-left-#{$j} {
+							margin-left: calc(#{$j*$subcol} + #{$phoneGutter/2});
+						}
+						.phone-right-#{$j} { 
+							margin-right: calc(#{$j*$subcol} + #{$phoneGutter/2});
+						}
+					}
+				}
+
+				&.justify-phone {
+					flex-wrap: nowrap;
+				    justify-content: space-between;
+				}
+
+			}
+		}
+
+		&.justify-phone {
+			flex-wrap: nowrap;
+		    justify-content: space-between;
+		}
+
+	}
+
+	@media #{$mobile} { 
+		> .mobile-0 { 
+			display: none; 
 		}
 	}
 
-	@media #{$tablet} {
-		.justify-tablet {
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			* {
-				width: auto;
-				display: block;
+	@media #{$tabletUp} {
+
+		padding-left: calc(#{$tabletPadding} - #{$tabletGutter / 2});
+		padding-right: calc(#{$tabletPadding} - #{$tabletGutter / 2});
+
+		> .tablet-0 { display: none; }
+
+		@for $i from 1 through $tabletGrid {
+			$k : $tabletGrid - $i + 1;
+			$subcol: 100%/$k;
+			//.desktop-#{$k}:not(.subwrapper) {
+
+			.tablet-#{$k} {
+
+				width: calc(#{$tabletColumn*$k} - #{$tabletGutter}) ;
+				margin-left: $tabletGutter / 2;
+				margin-right: $tabletGutter / 2;
+
+				.subwrapper {
+
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: flex-start;
+					align-content: flex-start;
+					margin-left: - $tabletGutter / 2;
+					margin-right: - $tabletGutter / 2;
+					width: calc(100% + #{$tabletGutter});
+
+					> * {
+						margin-left: $tabletGutter/2;
+						margin-right: $tabletGutter/2;
+					}
+
+					> .tablet-0 { display: none; }
+
+					@for $j from 1 through $tabletGrid {
+						@if $j == $k {
+							.tablet-#{$j} {
+								width: calc(#{$subcol*$j} - #{$tabletGutter});
+								margin-left: $tabletGutter / 2;
+								margin-right: $tabletGutter / 2;
+							}
+						}
+						@if $j < $k {
+							.tablet-#{$j} {
+								width: calc(#{$subcol*$j} - #{$tabletGutter});
+								margin-left: $tabletGutter / 2;
+								margin-right: $tabletGutter / 2;
+							}
+						}
+					}
+
+					@for $j from 1 through $tabletGrid {
+						@if $j < $k {
+							.tablet-left-#{$j} {
+								margin-left: calc(#{$j*$subcol} + #{$tabletGutter/2});
+							}
+							.tablet-right-#{$j} { 
+								margin-right: calc(#{$j*$subcol} + #{$tabletGutter/2});
+							}
+						}
+					}
+
+					&.justify-tablet {
+						flex-wrap: nowrap;
+					    justify-content: space-between;
+					}
+
+					@for $i from 1 through $subgrid {
+						.tablet-sub-#{$i} {
+
+							$subcol: 100%/$i;
+
+							display: flex;
+							flex-flow: row wrap;
+							justify-content: flex-start;
+							align-items: flex-start;
+							align-content: flex-start;
+							margin-left: - $tabletGutter / 2;
+							margin-right: - $tabletGutter / 2;
+							width: calc(100% + #{$tabletGutter});
+
+							> .tablet-0 { display: none; }
+
+							@for $j from 1 through $subgrid {
+								@if $j == $i {
+									.tablet-#{$j} {
+										width: $subcol*$j;
+										margin-left: $tabletGutter / 2;
+										margin-right: $tabletGutter / 2;
+									}
+								}
+								@if $j < $i {
+									.tablet-#{$j} {
+										width: calc(#{$subcol*$j} - #{$tabletGutter});
+										margin-left: $tabletGutter / 2;
+										margin-right: $tabletGutter / 2;
+									}
+								}
+							}
+
+							@for $j from 1 through $subgrid {
+								@if $j < $i {
+									.tablet-left-#{$j} {
+										margin-left: calc(#{$j*$subcol} + #{$tabletGutter/2});
+									}
+									.tablet-right-#{$j} { 
+										margin-right: calc(#{$j*$subcol} + #{$tabletGutter/2});
+									}
+								}
+							}
+
+							&.justify-tablet {
+								flex-wrap: nowrap;
+							    justify-content: space-between;
+							}
+
+						}
+					}
+
+				}
 			}
 		}
+
+		@for $i from 1 through $tabletGrid - 1 {
+			.tablet-left-#{$i} { 
+				margin-left: calc(#{$i*$tabletColumn} + #{$tabletGutter / 2});
+				&.wrapper {
+					margin-left: $i*$tabletColumn;
+				}
+			}
+			.tablet-right-#{$i} { 
+				margin-right: calc(#{$i*$tabletColumn} + #{$tabletGutter / 2});
+				&.wrapper {
+					margin-right: $i*$tabletColumn;
+				}
+			}
+		}
+
+		@for $i from 1 through $subgrid {
+			.tablet-sub-#{$i} {
+
+				$subcol: 100%/$i;
+
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				margin-left: - $tabletGutter / 2;
+				margin-right: - $tabletGutter / 2;
+				width: calc(100% + #{$tabletGutter});
+
+				> .tablet-0 { display: none; }
+
+				@for $j from 1 through $subgrid {
+					@if $j == $i {
+						.tablet-#{$j} {
+							width: $subcol*$j;
+							margin-left: $tabletGutter / 2;
+							margin-right: $tabletGutter / 2;
+						}
+					}
+					@if $j < $i {
+						.tablet-#{$j} {
+							width: calc(#{$subcol*$j} - #{$tabletGutter});
+							margin-left: $tabletGutter / 2;
+							margin-right: $tabletGutter / 2;
+						}
+					}
+				}
+
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.tablet-left-#{$j} {
+							margin-left: calc(#{$j*$subcol} + #{$tabletGutter/2});
+						}
+						.tablet-right-#{$j} { 
+							margin-right: calc(#{$j*$subcol} + #{$tabletGutter/2});
+						}
+					}
+				}
+
+				&.justify-tablet {
+					flex-wrap: nowrap;
+				    justify-content: space-between;
+				}
+
+			}
+		}
+
+		&.justify-tablet {
+			flex-wrap: nowrap;
+		    justify-content: space-between;
+		}
+
 	}
 
-	@media #{$desktop} {
-		.justify-desktop {
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			* {
-				width: auto;
-				display: block;
+	@media #{$desktopUp} {
+
+		padding-left: calc(#{$desktopPadding} - #{$desktopGutter / 2});
+		padding-right: calc(#{$desktopPadding} - #{$desktopGutter / 2});
+
+		> .desktop-0 { display: none; }
+
+		@for $i from 1 through $desktopGrid {
+			$k : $desktopGrid - $i + 1;
+			$subcol: 100%/$k;
+			//.desktop-#{$k}:not(.subwrapper) {
+
+			.desktop-#{$k} {
+
+				width: calc(#{$desktopColumn*$k} - #{$desktopGutter}) ;
+				margin-left: $desktopGutter / 2;
+				margin-right: $desktopGutter / 2;
+
+				.subwrapper {
+
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: flex-start;
+					align-content: flex-start;
+					margin-left: - $desktopGutter / 2;
+					margin-right: - $desktopGutter / 2;
+					width: calc(100% + #{$desktopGutter});
+
+					> * {
+						margin-left: $desktopGutter/2;
+						margin-right: $desktopGutter/2;
+					}
+
+					> .desktop-0 { display: none; }
+
+					@for $j from 1 through $desktopGrid {
+						@if $j == $k {
+							.desktop-#{$j} {
+								width: calc(#{$subcol*$j} - #{$desktopGutter});
+								margin-left: $desktopGutter / 2;
+								margin-right: $desktopGutter / 2;
+							}
+						}
+						@if $j < $k {
+							.desktop-#{$j} {
+								width: calc(#{$subcol*$j} - #{$desktopGutter});
+								margin-left: $desktopGutter / 2;
+								margin-right: $desktopGutter / 2;
+							}
+						}
+					}
+
+					@for $j from 1 through $desktopGrid {
+						@if $j < $k {
+							.desktop-left-#{$j} {
+								margin-left: calc(#{$j*$subcol} + #{$desktopGutter/2});
+							}
+							.desktop-right-#{$j} { 
+								margin-right: calc(#{$j*$subcol} + #{$desktopGutter/2});
+							}
+						}
+					}
+
+					&.justify-desktop {
+						flex-wrap: nowrap;
+					    justify-content: space-between;
+					}
+
+				}
+
+				@for $i from 1 through $subgrid {
+					.desktop-sub-#{$i} {
+
+						$subcol: 100%/$i;
+
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: flex-start;
+						align-items: flex-start;
+						align-content: flex-start;
+						margin-left: - $desktopGutter / 2;
+						margin-right: - $desktopGutter / 2;
+						width: calc(100% + #{$desktopGutter});
+
+						> .desktop-0 { display: none; }
+
+						@for $j from 1 through $subgrid {
+							@if $j == $i {
+								.desktop-#{$j} {
+									width: $subcol*$j;
+									margin-left: $desktopGutter / 2;
+									margin-right: $desktopGutter / 2;
+								}
+							}
+							@if $j < $i {
+								.desktop-#{$j} {
+									width: calc(#{$subcol*$j} - #{$desktopGutter});
+									margin-left: $desktopGutter / 2;
+									margin-right: $desktopGutter / 2;
+								}
+							}
+						}
+
+						@for $j from 1 through $subgrid {
+							@if $j < $i {
+								.desktop-left-#{$j} {
+									margin-left: calc(#{$j*$subcol} + #{$desktopGutter/2});
+								}
+								.desktop-right-#{$j} { 
+									margin-right: calc(#{$j*$subcol} + #{$desktopGutter/2});
+								}
+							}
+						}
+
+						&.justify-desktop {
+							flex-wrap: nowrap;
+						    justify-content: space-between;
+						}
+
+					}
+				}
 			}
 		}
+
+		@for $i from 1 through $desktopGrid - 1 {
+			.desktop-left-#{$i} { 
+				margin-left: calc(#{$i*$desktopColumn} + #{$desktopGutter / 2});
+				&.wrapper {
+					margin-left: $i*$desktopColumn;
+				}
+			}
+			.desktop-right-#{$i} { 
+				margin-right: calc(#{$i*$desktopColumn} + #{$desktopGutter / 2});
+				&.wrapper {
+					margin-right: $i*$desktopColumn;
+				}
+			}
+		}
+
+		@for $i from 1 through $subgrid {
+			.desktop-sub-#{$i} {
+
+				$subcol: 100%/$i;
+
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				margin-left: - $desktopGutter / 2;
+				margin-right: - $desktopGutter / 2;
+				width: calc(100% + #{$desktopGutter});
+
+				> .desktop-0 { display: none; }
+
+				@for $j from 1 through $subgrid {
+					@if $j == $i {
+						.desktop-#{$j} {
+							width: $subcol*$j;
+							margin-left: $desktopGutter / 2;
+							margin-right: $desktopGutter / 2;
+						}
+					}
+					@if $j < $i {
+						.desktop-#{$j} {
+							width: calc(#{$subcol*$j} - #{$desktopGutter});
+							margin-left: $desktopGutter / 2;
+							margin-right: $desktopGutter / 2;
+						}
+					}
+				}
+
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.desktop-left-#{$j} {
+							margin-left: calc(#{$j*$subcol} + #{$desktopGutter/2});
+						}
+						.desktop-right-#{$j} { 
+							margin-right: calc(#{$j*$subcol} + #{$desktopGutter/2});
+						}
+					}
+				}
+
+				&.justify-desktop {
+					flex-wrap: nowrap;
+				    justify-content: space-between;
+				}
+
+			}
+		}
+
+		&.justify-desktop {
+			flex-wrap: nowrap;
+		    justify-content: space-between;
+		}
+
 	}
 
 	@media #{$largeUp} {
-		.justify-large {
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			* {
-				width: auto;
-				display: block;
+
+		padding-left: calc(#{$largePadding} - #{$largeGutter / 2});
+		padding-right: calc(#{$largePadding} - #{$largeGutter / 2});
+
+		> .large-0 { display: none; }
+
+		@for $i from 1 through $largeGrid {
+			$k : $largeGrid - $i + 1;
+			$subcol: 100%/$k;
+			//.desktop-#{$k}:not(.subwrapper) {
+
+			.large-#{$k} {
+
+				width: calc(#{$largeColumn*$k} - #{$largeGutter}) ;
+				margin-left: $largeGutter / 2;
+				margin-right: $largeGutter / 2;
+
+				.subwrapper {
+
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: flex-start;
+					align-content: flex-start;
+					margin-left: - $largeGutter / 2;
+					margin-right: - $largeGutter / 2;
+					width: calc(100% + #{$largeGutter});
+
+					> * {
+						margin-left: $largeGutter/2;
+						margin-right: $largeGutter/2;
+					}
+
+					> .large-0 { display: none; }
+
+					@for $j from 1 through $largeGrid {
+						@if $j == $k {
+							.large-#{$j} {
+								width: calc(#{$subcol*$j} - #{$largeGutter});
+								margin-left: $largeGutter / 2;
+								margin-right: $largeGutter / 2;
+							}
+						}
+						@if $j < $k {
+							.large-#{$j} {
+								width: calc(#{$subcol*$j} - #{$largeGutter});
+								margin-left: $largeGutter / 2;
+								margin-right: $largeGutter / 2;
+							}
+						}
+					}
+
+					@for $j from 1 through $largeGrid {
+						@if $j < $k {
+							.large-left-#{$j} {
+								margin-left: calc(#{$j*$subcol} + #{$largeGutter/2});
+							}
+							.large-right-#{$j} { 
+								margin-right: calc(#{$j*$subcol} + #{$largeGutter/2});
+							}
+						}
+					}
+
+					&.justify-large {
+						flex-wrap: nowrap;
+					    justify-content: space-between;
+					}
+
+				}
+
+				@for $i from 1 through $subgrid {
+					.large-sub-#{$i} {
+
+						$subcol: 100%/$i;
+
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: flex-start;
+						align-items: flex-start;
+						align-content: flex-start;
+						margin-left: - $largeGutter / 2;
+						margin-right: - $largeGutter / 2;
+						width: calc(100% + #{$largeGutter});
+
+						> .large-0 { display: none; }
+
+						@for $j from 1 through $subgrid {
+							@if $j == $i {
+								.large-#{$j} {
+									width: $subcol*$j;
+									margin-left: $largeGutter / 2;
+									margin-right: $largeGutter / 2;
+								}
+							}
+							@if $j < $i {
+								.large-#{$j} {
+									width: calc(#{$subcol*$j} - #{$largeGutter});
+									margin-left: $largeGutter / 2;
+									margin-right: $largeGutter / 2;
+								}
+							}
+						}
+
+						@for $j from 1 through $subgrid {
+							@if $j < $i {
+								.large-left-#{$j} {
+									margin-left: calc(#{$j*$subcol} + #{$largeGutter/2});
+								}
+								.large-right-#{$j} { 
+									margin-right: calc(#{$j*$subcol} + #{$largeGutter/2});
+								}
+							}
+						}
+
+						&.justify-large {
+							flex-wrap: nowrap;
+						    justify-content: space-between;
+						}
+
+					}
+				}
+
 			}
 		}
+
+		@for $i from 1 through $largeGrid - 1 {
+			.large-left-#{$i} { 
+				margin-left: calc(#{$i*$largeColumn} + #{$largeGutter / 2});
+				&.wrapper {
+					margin-left: $i*$largeColumn;
+				}
+			}
+			.large-right-#{$i} { 
+				margin-right: calc(#{$i*$largeColumn} + #{$largeGutter / 2});
+				&.wrapper {
+					margin-right: $i*$largeColumn;
+				}
+			}
+		}
+
+		@for $i from 1 through $subgrid {
+			.large-sub-#{$i} {
+
+				$subcol: 100%/$i;
+
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-items: flex-start;
+				align-content: flex-start;
+				margin-left: - $largeGutter / 2;
+				margin-right: - $largeGutter / 2;
+				width: calc(100% + #{$largeGutter});
+
+				> .large-0 { display: none; }
+
+				@for $j from 1 through $subgrid {
+					@if $j == $i {
+						.large-#{$j} {
+							width: $subcol*$j;
+							margin-left: $largeGutter / 2;
+							margin-right: $largeGutter / 2;
+						}
+					}
+					@if $j < $i {
+						.large-#{$j} {
+							width: calc(#{$subcol*$j} - #{$largeGutter});
+							margin-left: $largeGutter / 2;
+							margin-right: $largeGutter / 2;
+						}
+					}
+				}
+
+				@for $j from 1 through $subgrid {
+					@if $j < $i {
+						.large-left-#{$j} {
+							margin-left: calc(#{$j*$subcol} + #{$largeGutter/2});
+						}
+						.large-right-#{$j} { 
+							margin-right: calc(#{$j*$subcol} + #{$largeGutter/2});
+						}
+					}
+				}
+
+				&.justify-large {
+					flex-wrap: nowrap;
+				    justify-content: space-between;
+				}
+
+			}
+		}
+
+	}
+
+	&.justify-large {
+		flex-wrap: nowrap;
+	    justify-content: space-between;
 	}
 
 }
@@ -654,10 +927,13 @@
 			background-color: transparent;
 			margin-top: 0;
 			margin-bottom: 0;
-			.content {
-				height: 100%;
-				background-color: rgba(226, 22, 105, 0.15);
-			}
+			background: linear-gradient( to left bottom, rgba(226, 22, 105, 0.15), rgba(226, 22, 105, 0.05));
 		}
 	}
 }
+
+@media #{$phone} { .phone-0 { display: none; } }
+@media #{$mobile} { .mobile-0 { display: none; } }
+@media #{$tabletUp} { .tablet-0 { display: none; } }
+@media #{$desktopUp} { .desktop-0 { display: none; } }
+@media #{$largeUp} { .large-0 { display: none; } }

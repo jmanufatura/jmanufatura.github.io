@@ -6,13 +6,28 @@
 	"cores"
 ;
 
+#menu {
+
+	@media #{$phone} {
+		bottom: 0;
+		top: unset;
+		width: 100%;
+		#botao-encomendar {
+		    width: 100%;
+		    padding: 0;
+		    margin: 0;
+		    position: fixed;
+		    bottom: 0;
+		    left: 0;
+		}
+	}
+
+}
+
 #capa-home, #historia, #produtos-capa, #eventos, #pontos-de-venda {
 	align-content: center;
 	justify-content: center;
-	h1 {
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
+	min-height: calc(100vh - 114px);
 }
 
 #capa-home{
@@ -41,21 +56,26 @@
 	height: 48px;
 	p {
 		line-height: 48px;
+		margin-bottom: 0;
 	}
 }
 
 #historia {
 	.fundo {
 		background-image: url("/img/historia-1.jpg");
-		min-height: calc(100vh - 170px);
+		min-height: calc(100vh - 227px);
 		margin-top: 32px;
+	}
+	.pequeno {
+		font-size: 14px;
+		line-height: 17px;
 	}
 }
 
 #pontos-de-venda {
 	.fundo {
 		background-image: url("/img/pontos-de-venda.jpg");
-		min-height: calc(100vh - 124px);
+		min-height: calc(100vh - 273px);
 		margin-top: 78px;
 	}
 	address {
@@ -66,7 +86,6 @@
 }
 
 #historia, #pontos-de-venda {
-	min-height: calc(100vh - 57px);
 	#marcador {
 		margin-top: 48px;
 	}
@@ -77,16 +96,17 @@
 		margin-bottom: 81px;
 		justify-content: flex-end;
 		.container-caixa {
-			padding-top: 22px;
-			padding-bottom: 22px;
-			padding-right: 24px;
+			padding-top: 20px;
+			padding-bottom: 20px;
 			.caixa {
 				padding-top: 78px;
 				padding-bottom: 92px;
-				padding-left: 17.17%;
-				padding-right: 17.17%;
+				margin-right: 20px;
 				background-color: $branco;
+				padding-left: 16.6666666%;
+				padding-right: 16.6666666%;
 				justify-content: center;
+				text-align: center;
 				h1, p {
 					color: $azul-escuro;
 				}
@@ -109,17 +129,21 @@
 }
 
 #produtos-capa {
-	min-height: calc(100vh - 57px);
 	background-image: url("/img/produtos-capa.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	text-align: center;
 }
 
 #produtos {
-	min-height: calc(100vh - 57px);
 	background-color: $branco;
 	align-items: center;
+	padding-top: 130px;
+	padding-bottom: 130px;
+	.subwrapper {
+		justify-content: space-between;
+	}
 	.thumb-home {
 		figure {
 			background-size: cover;
@@ -136,12 +160,11 @@
 }
 
 #eventos {
-	height: calc(100vh - 2rem);
-	//max-height: 100vw;
 	background-image: url("/img/eventos-home.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	text-align: center;
 }
 
 #entregas {
@@ -171,9 +194,10 @@
 	flex-wrap: nowrap;
 	align-self: flex-end;
 	margin-bottom: 44px;
+	z-index: 0;
 	input, button {
-		height: 29px;
-		line-height: 29px;
+		height: 49px;
+		line-height: 49px;
 	}
 	input {
 		width: 66.666%;
