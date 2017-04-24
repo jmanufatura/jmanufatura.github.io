@@ -10,7 +10,8 @@
 	margin-top: 72px;
 	padding-top: 30px;
 	background-color: $verde-claro;
-	height: calc(100vh - 57px);
+	height: calc(100vh - 72px);
+	align-content: space-between;
 	.ilustra {
 		background-image: url("/img/pontos-capa.jpg");
 		background-size: cover;
@@ -21,6 +22,14 @@
 			height: calc(100vh - 263px);
 			margin-bottom: 26px;
 		}
+	}
+	.proximo {
+		background-image: url("/img/seta-baixo.svg");
+		background-size: auto 9px;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 12px;
+		margin-bottom: 28px;
 	}
 }
 
@@ -35,6 +44,7 @@
 
 	@media #{$phone} {
 		padding-top: 30px;
+		padding-bottom: 30px;
 		margin-top: 0;
 		background-color: $branco;
 	}
@@ -56,6 +66,11 @@
 	.conteudo {
 		align-self: center;
 		z-index: 1;
+		@media #{$phone} {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: center;
+		}
 		.info-quiosque {
 			margin-bottom: 75px;
 			@media #{$phone} {
@@ -91,9 +106,13 @@
 		@media #{$phone} {
 			background-color: $verde-claro;
 			padding: 15px;
+			margin-bottom: 30px;
 			h6, p {
 				font-size: 12px;
 				line-height: 16px;
+			}
+			p {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -103,9 +122,20 @@
 	padding-top: 116px;
 	padding-bottom: 116px;
 	background-color: $branco;
+	@media #{$phone} {
+		padding-top: 30px;
+		padding-bottom: 34px;
+	}
 	h1 {
 		margin-bottom: 69px;
 		text-align: left;
+	}
+	h5 {
+		@media #{$phone} {
+			font-size: 17px;
+			line-height: 22px;
+			margin-bottom: 24px;
+		}
 	}
 	form {
 		input, textarea, button {
@@ -153,6 +183,9 @@
 		background-color: $verde-claro;
 		padding: 23px;
 		margin-bottom: 32px;
+		@media #{$phone} {
+			margin-bottom: 14px;
+		}
 		h6 {
 			margin-bottom: 32px;
 		}
@@ -161,5 +194,27 @@
 			line-height: 22px;
 			margin-bottom: 48px; 
 		}
+		@media #{$phone} {
+			background-color: $verde-claro;
+			padding: 15px;
+			h6, p {
+				font-size: 12px;
+				line-height: 16px;
+			}
+			h6 {
+				margin-bottom: 16px;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.subir {
+		background-image: url("/img/seta-cima.svg");
+		background-size: auto 9px;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 12px;
+		margin-top: 20px;
 	}
 }
