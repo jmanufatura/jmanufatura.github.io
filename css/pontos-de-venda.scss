@@ -130,13 +130,6 @@
 		margin-bottom: 69px;
 		text-align: left;
 	}
-	h5 {
-		@media #{$phone} {
-			font-size: 17px;
-			line-height: 22px;
-			margin-bottom: 24px;
-		}
-	}
 	form {
 		input, textarea, button {
 			&:focus {

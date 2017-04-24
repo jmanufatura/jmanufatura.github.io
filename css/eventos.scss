@@ -6,17 +6,54 @@
 	"cores"
 ;
 
+#intro-phone {
+	margin-top: 72px;
+	padding-top: 30px;
+	background-color: $roxo-claro;
+	height: calc(100vh - 72px);
+	align-content: space-between;
+	.ilustra {
+		background-image: url("/img/eventos-ilustra.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 0;
+		@media #{$phone} {
+			height: calc(100vh - 263px);
+			margin-bottom: 26px;
+		}
+	}
+	.proximo {
+		background-image: url("/img/seta-baixo.svg");
+		background-size: auto 9px;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 12px;
+		margin-bottom: 28px;
+	}
+}
+
 #intro-eventos {
 	margin-top: 57px;
 	background-color: $vermelho-claro;
 	padding-top: 92px;
 	padding-bottom: 70px;
 	position: relative;
+	justify-content: center;
+	@media #{$phone} {
+		background-color: $roxo-claro;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-top: 0;
+	}
 	h1 {
 		margin-bottom: 42px;
 	}
 	p {
 		margin-bottom: 70px;
+		@media #{$phone} {
+			margin-bottom: 15px;
+		}
 		&.grande {
 			text-align: center;
 			margin-bottom: 75px;
@@ -24,12 +61,18 @@
 	}
 	h6 {
 		margin-bottom: 30px;
+		@media #{$phone} {
+			margin-bottom: 5px;
+		}
 	}
 	a {
 		width: auto;
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
+		@media #{$phone} {
+			margin-top: 15px;
+		}
 		span {
 			position: relative;
 			&::after {
@@ -61,7 +104,10 @@
 	padding-top: 116px;
 	padding-bottom: 116px;
 	background-color: $roxo-claro;
-	h1 {
+	@media #{$phone} {
+		padding-top: 75px;
+	}
+	h2 {
 		margin-bottom: 48px;
 	}
 	form {
@@ -75,10 +121,17 @@
 			margin-bottom: 22px;
 			font-size: 15px;
 			padding-left: 15px;
+			padding-right: 15px;
 			width: 100%;
+			@media #{$phone} {
+				margin-bottom: 18px;
+			}
 		}
 		input {
 			line-height: 29px;
+			@media #{$phone} {
+				line-height: 36px;
+			}
 		}
 		textarea {
 			resize: none;
@@ -100,6 +153,9 @@
 			border: solid 2px $azul-escuro;
 			margin-left: auto;
 			margin-right: auto;
+			@media #{$phone} {
+				border: solid 1px $azul-escuro;
+			}
 			&:hover {
 				background-color: $azul-escuro;
 				border: none;
