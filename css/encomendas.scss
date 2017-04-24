@@ -11,10 +11,47 @@
 	background-color: $amarelo-claro;
 	.fundo-branco {
 		background-color: $branco;
+		margin-top: 90px;
+		margin-bottom: 33px;
+		padding-top: 52px;
+	}
+	h1, h6 {
+		text-align: center;
+	}
+	h1 {
+		margin-bottom: 79px;
+	}
+	h6 {
+		margin-bottom: 31px;
 	}
 	.produto {
-		height: 200px;
-		background-color: $amarelo-claro;
+		background-color: $branco;
 		margin-bottom: 12px;
+		.thumb {
+			margin-right: -30px;
+			figure {
+				background-image: url("/img/bolo-no-pote.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				padding-bottom: 100%;
+			}
+		}
+	}
+	#locais {
+		margin-bottom: 44px;
+		.local {
+			padding: 25px;
+			border: 1px solid $amarelo-claro;
+			background-color: $branco;
+			p {
+				font-size: 15px;
+				line-height: 22px;
+				margin-bottom: 0;
+			}
+			&.selecionado {
+				background-color: $amarelo-claro;
+			}
+		}
 	}
 }

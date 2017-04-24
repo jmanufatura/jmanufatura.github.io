@@ -10,6 +10,10 @@
 
 	@media #{$phone} {
 		background-color: transparent;
+		transition: background-color .1s ease-in-out;
+		&.aberto {
+			background-color: $branco;
+		}
 		// bottom: 0;
 		// top: unset;
 		// width: 100%;
@@ -29,6 +33,15 @@
 	align-content: center;
 	justify-content: center;
 	min-height: calc(100vh - 114px);
+}
+
+#capa-phone {
+	background-image: url("/img/video-home.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	align-items: center;
 }
 
 #capa-home{
@@ -227,3 +240,4 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
