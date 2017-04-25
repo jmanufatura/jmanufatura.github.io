@@ -24,22 +24,73 @@
 	h6 {
 		margin-bottom: 31px;
 	}
+	.botao {
+		font-size: 13px;
+		line-height: 26px;
+		min-width: 196px;
+		height: 26px;
+		border: 1px solid $amarelo-claro;
+		display: inline-flex;
+		justify-content: center;
+		text-align: center;
+		font-family: 'HurmeGeometric', sans-serif;
+		padding-left: $desktopGutter/2;
+		padding-right: $desktopGutter/2;
+	}
 	.produto {
 		background-color: $branco;
-		margin-bottom: 12px;
+		margin-bottom: 30px;
+		.subwrapper {
+			align-items: center;
+		}
 		.thumb {
-			margin-right: -30px;
+			overflow-x: visible;
 			figure {
 				background-image: url("/img/bolo-no-pote.jpg");
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
-				padding-bottom: 100%;
+				padding-bottom: calc(100% + #{$desktopGutter});
+    			width: calc(100% + #{$desktopGutter});
+			}
+		}
+		.nome {
+			padding-left: 42px;
+			h6, p {
+				text-align: left;
+			}
+			h6 {
+				margin-bottom: 10px;
+			}
+		}
+		.opcoes {
+			p {
+				text-align: left;
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.preco {
+			p {
+				text-align: right;
 			}
 		}
 	}
+	#atualizar {
+		display: flex;
+    	justify-content: flex-end;
+    	margin-bottom: 76px;
+	}
 	#locais {
 		margin-bottom: 44px;
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    #novo-local {
+	    	margin-bottom: 24px;
+	    }
 		.local {
 			padding: 25px;
 			border: 1px solid $amarelo-claro;
@@ -53,5 +104,24 @@
 				background-color: $amarelo-claro;
 			}
 		}
+	}
+	#buscar {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 27px;
+	}
+	#total {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		margin-bottom: 33px;
+		h6 {
+			margin-bottom: 0;
+		}
+	}
+	#navegacao {
+		justify-content: space-between;
+    	display: flex;
+    	margin-bottom: 50px;
 	}
 }

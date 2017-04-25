@@ -113,18 +113,19 @@
 </nav>
 
 
-    <section id="capa-phone" class="wrapper phone-4">
+    <section id="capa-phone" class="wrapper phone-4 tablet-0 desktop-0 large-0">
 	<figure class="phone-left-1 phone-right-1">
       <img src="/img/logo-completo.svg">
     </figure>
 </section>
 
 <section id="capa-home" class="phone-0">
-  <iframe src="https://player.vimeo.com/video/20874177?color=fff1b6&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  <section class="wrapper" id="logo-capa-home">
-    <figure class="tablet-left-4 tablet-right-4 desktop-left-5 desktop-right-5">
-      <img src="/img/logo-completo.svg">
-    </figure>
+  <iframe id="video-home" src="https://player.vimeo.com/video/20874177?color=fff1b6&title=0&byline=0&portrait=0&background=1&autoplay=0" width="640" height="360" frameborder="0"></iframe>
+  <section class="wrapper" id="overlay-capa-home">
+    <div class="tablet-left-4 tablet-right-4 desktop-left-5 desktop-right-5">
+      <img id="logo-home" src="/img/logo-completo.svg">
+      <figure id="controle-video"></figure>
+    </div>
   </section>
 </section>
 
@@ -135,7 +136,7 @@
 </a>
 
 <section class="wrapper phone-0" id="historia">
-	<div class="fundo tablet-12 desktop-left-1 desktop-10 desktop-right-1">
+	<div class="fundo tablet-12 desktop-left-1 desktop-10 desktop-right-1 large-left-1 large-10 large-right-1">
 		<div class="subwrapper">
 			<div class="container-caixa tablet-8 tablet-left-4 desktop-5 desktop-left-5 large-4 large-left-6">
 				<div class="caixa">
@@ -199,7 +200,7 @@
 </section>
 
 <section class="wrapper phone-0" id="pontos-de-venda">
-	<div class="fundo tablet-12 desktop-left-1 desktop-10 desktop-right-1">
+	<div class="fundo tablet-12 desktop-left-1 desktop-10 desktop-right-1 large-left-1 large-10 large-right-1">
 		<div class="subwrapper">
 			<div class="container-caixa tablet-8 tablet-left-4 desktop-5 desktop-left-5 large-4 large-left-6">
 				<div class="caixa">
@@ -282,6 +283,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/scripts/menu.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script src="/scripts/fluid-videos.js"></script>
 
 

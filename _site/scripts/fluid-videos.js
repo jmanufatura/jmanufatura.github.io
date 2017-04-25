@@ -27,3 +27,43 @@ $(window).resize(function() {
   });
 
 }).resize();
+
+var iframe = document.querySelector('#video-home');
+var player = new Vimeo.Player(iframe);
+
+$("#overlay-capa-home").click() 
+
+player.on('play', function() {
+  $("#controle-video").click(function() {
+      player.pause();
+  });
+  $("#overlay-capa-home").click(function() {
+      player.pause();
+  });
+  $("#overlay-capa-home")
+    .removeClass('pausado')
+    .addClass('reproduzindo')
+  ;
+});
+
+player.on('pause', function() {
+  $("#controle-video").click(function() {
+      player.play();
+  });
+  $("#overlay-capa-home").click(function() {
+      player.play();
+  });
+  $("#overlay-capa-home")
+    .removeClass('reproduzindo')
+    .addClass('pausado')
+  ;
+});
+
+player.on('loaded', function() {
+  $("#controle-video").click(function() {
+      player.play();
+  });
+  $("#overlay-capa-home").click(function() {
+      player.play();
+  });
+});
