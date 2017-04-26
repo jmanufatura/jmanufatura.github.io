@@ -7,13 +7,34 @@ html {
 	font-size: 150%;
 }
 
+body {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	&.fixo {
+		overflow: hidden;
+	}
+}
+
 a {
 	text-decoration: none;
 	color: unset;
 }
 
+button {
+	background-color: transparent;
+}
+
 iframe {
 	display: block;
+}
+
+form {
+	input, textarea, button {
+		&:focus {
+			outline-width: 0;
+		}
+	}
 }
 
 img {

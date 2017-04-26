@@ -1,0 +1,42 @@
+---
+layout: default
+permalink: /minha-conta
+---
+
+<section id="minha-conta" class="wrapper">
+	<div class="fundo-branco tablet-12 desktop-left-3 desktop-6 desktop-right-3">
+		<div class="subwrapper">
+			<h1 class="tablet-left-1 tablet-right-1 tablet-10 desktop-left-1 desktop-4 desktop-right-1">Minha Conta</h1>
+			<form class="formulario tablet-left-1 tablet-right-1 tablet-10 desktop-left-1 desktop-4 desktop-right-1" name="novoLocal" onsubmit="return validarCep()" >
+				<h6>Detalhes da conta</h6>
+				<div class="fieldset">
+					<label>Nome:</label>
+					<input type="text" name="">
+				</div>
+				<div class="fieldset">
+					<label>Sobrenome:</label>
+					<input type="text" name="">
+				</div>
+				<div class="fieldset">
+					<label>Email:</label>
+					<input type="text" name="">
+				</div>
+
+				<div class="fieldset">
+					<label>Data de Nascimento:</label>
+					<input type="text" name="">
+				</div>
+				<div class="fieldset">
+					<label>Sexo:</label>
+					<input type="text" name="">
+				</div>
+				<div class="fieldset">
+					<label>Senha:</label>
+					<input type="text" pattern="[0-9]{8}" maxlength="8" name="cep" required>
+				</div>
+
+				<button class="botao">atualizar</button>
+			</form>	
+		</div>
+	</div>
+</section>

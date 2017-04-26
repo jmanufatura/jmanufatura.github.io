@@ -1,0 +1,90 @@
+---
+---
+
+@import
+	"variaveis",
+	"cores"
+;
+
+#minha-conta {
+	padding-top: 57px;
+	background-color: $roxo-claro;
+	min-height: 100vh;
+	.botao {
+		font-size: 13px;
+		line-height: 26px;
+		min-width: 107px;
+		height: 26px;
+		border: 1px solid $roxo-claro;
+		display: inline-flex;
+		justify-content: center;
+		text-align: center;
+		font-family: 'HurmeGeometric', sans-serif;
+		padding-left: $desktopGutter/2;
+		padding-right: $desktopGutter/2;
+		cursor: pointer;
+	}
+	.fundo-branco {
+		background-color: $branco;
+		margin-top: 90px;
+		margin-bottom: 33px;
+		padding-top: 52px;
+		padding-bottom: 39px;
+	}
+	h1, h6 {
+		text-align: center;
+	}
+	h1 {
+		margin-bottom: 79px;
+	}
+	
+	h6 {
+		text-align: center;
+		margin-bottom: 37px;
+	}
+	.formulario {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		height: auto;
+		opacity: 1;
+		transition: opacity .2s ease-in-out, height .4s ease-in-out .2s;
+		button {
+			margin-top: 36px;
+		}
+	}
+	.fieldset {
+		width: 100%;
+		display: flex;
+		label {
+			flex-shrink: 0;
+			margin-right: 10px;
+			font-size: 15px;
+		    line-height: 22px;
+		    margin-bottom: 4px;
+		}
+		input, textarea {
+			background-color: transparent;
+			width: 100%;
+			font-size: 15px;
+		    line-height: 22px;
+		    margin-bottom: 4px;
+		    resize: none;
+		}
+		input {
+			border-bottom: 1px solid $azul-escuro;
+		}
+		textarea {
+			position: relative;
+			background-image: -moz-linear-gradient(bottom , transparent, transparent 26px, $azul-escuro 0px); 
+    		background-image: -webkit-linear-gradient(bottom , transparent, transparent 26px, $azul-escuro 0px);
+
+	        -webkit-background-size:  100% 27px;
+	        background-size: 100% 27px;
+	        line-height: 27px;
+	        margin-bottom: 0;
+	        background-position-y: -1px;
+	        transform: translateY(-4px);
+		}
+	}
+}
