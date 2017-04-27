@@ -1,12 +1,10 @@
 $( function() {
   
-  var e = 480;
+  var data = [];
   
-  var t = 2016;
+  var ano;
   
-  var n = 1;
-  
-  var r = [];
+  var mes;
   
   var meses = [
     "Janeiro",
@@ -39,105 +37,130 @@ $( function() {
   
   var conteudo = calendario.find( "#calendario_conteudo" );
   
-  function c() {
+  function construirCalendario() {
     
     construirSemana();
-    var e = h();
-    var r = 0;
+
+    var data = h();
+    var dia = 0;
     var calendario = false;
     conteudo.empty();
     
     while( !calendario ) {
-      if ( dias[r] == e[0].weekday ) {
+      if ( dias[dia] == data[0].weekday ) {
         calendario = true
       } else {
         conteudo.append('<div class="dia vazio"><span></span></div>');
-        r++
+        dia++
       }
     }
+
+    var hoje = new Date().getDate();
+    var mes_atual = new Date().getMonth();
+    var ano_atual = new Date().getFullYear();
+    console.log(hoje);
+    console.log(mes_atual);
+    console.log(ano_atual);
     
-    for ( var c = 0; c < 42-r; c++ ) {
-      if ( c >= e.length ) {
+    for ( var i = 0; i < 42-dia; i++ ) {
+
+      if ( i >= data.length ) {
         conteudo.append('<div class="dia vazio"><span></span></div>')
-      } else {
-        var v = e[c].day;
-        if ( g ( new Date ( t, n-1, v) ) ) {
+      } 
+
+      else {
+        var v = data[i].day;
+
+        if ( g ( new Date ( ano, mes-1, v) ) ) {
           var m = '<div class="dia hoje"><span>';
-        } else { 
-          var m = '<div class="dia"><span>';
+        } else {
+          if ( ano < ano_atual - 1 ) {
+            var m = '<div class="dia passado"><span>';
+          } else {
+            if ( mes > mes_atual + 1) {
+              var m = '<div class="dia"><span>';
+            } else {
+              if ( mes == mes_atual + 1) {
+                if ( v > hoje ) {
+                  var m = '<div class="dia"><span>';
+                } else {
+                  var m = '<div class="dia passado"><span>';
+                }
+              } else {
+                var m = '<div class="dia passado"><span>';
+              }
+            }
+          }
         }
         conteudo.append( m + "" + v + "</span></div>" )
-        var hoje = new Date().getDate();
       }
     }
     
-    header.find( "h6" ).text( meses[n-1] + ", " + t );
+    header.find( "h6" ).text( meses[mes-1] + ", " + ano );
     
   }
   
   function h() {
     
-    var e = [];
+    var data = [];
     
-    for ( var r = 1; r < v(t,n) + 1; r++ ) {
-      e.push( { day : r, weekday : dias[ m ( t, n, r ) ] } )
+    for ( var i = 1; i < v(ano,mes) + 1; i++ ) {
+      data.push( { day : i, weekday : dias[ m ( ano, mes, i ) ] } )
     }
     
-    return e
+    return data
     
   }
   
   function construirSemana() {
     semana.empty();
-    for ( var e = 0; e < 7; e++ ) { 
-      semana.append( "<div>" + dias[e].substring(0,3) + "</div>" )
+    for ( var i = 0; i < 7; i++ ) { 
+      semana.append( "<div>" + dias[i].substring(0,3) + "</div>" )
     }
   }
   
-  function v(e,t) {
-    return( new Date(e,t,0) ).getDate()
+  function v(data,ano) {
+    return( new Date(data,ano,0) ).getDate()
   }
   
-  function m( e, t, n) {
-    return(new Date( e, t-1, n)).getDay()
+  function m( data, ano, mes) {
+    return(new Date( data, ano-1, mes)).getDay()
   }
   
-  function g(e) {
-    return y(new Date) == y(e)
+  function g(data) {
+    return y(new Date) == y(data)
   }
   
-  function y(e) {
-    return e
-      .getFullYear() + "/" + ( e.getMonth() + 1 ) + "/" + e.getDate()
+  function y(data) {
+    return data.getFullYear() + "/" + ( data.getMonth() + 1 ) + "/" + data.getDate();
   }
   
   function b() {
-    var e = new Date;
-    t = e.getFullYear();
-    n = e.getMonth() + 1
+    var data = new Date;
+    ano = data.getFullYear();
+    mes = data.getMonth() + 1
   }
   
   b();
-  
-  c();
+  construirCalendario();
   
   header.find('#mes-anterior').on("click",function() {
-    n--;
-    if (n < 1) {
-      n = 12;
-      t--;
+    mes--;
+    if (mes < 1) {
+      mes = 12;
+      ano--;
     }
-    c();
+    construirCalendario();
     return false;
   });
 
   header.find('#mes-proximo').on("click",function() {
-    n++;
-    if (n > 12) {
-      n = 1;
-      t++;
+    mes++;
+    if (mes > 12) {
+      mes = 1;
+      ano++;
     }
-    c();
+    construirCalendario();
     return false;
   });
   
