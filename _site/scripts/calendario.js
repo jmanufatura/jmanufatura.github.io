@@ -123,12 +123,20 @@ $( function() {
   
   header.find('#mes-anterior').on("click",function() {
     n--;
+    if (n < 1) {
+      n = 12;
+      t--;
+    }
     c();
     return false;
   });
 
   header.find('#mes-proximo').on("click",function() {
     n++;
+    if (n > 12) {
+      n = 1;
+      t++;
+    }
     c();
     return false;
   });
