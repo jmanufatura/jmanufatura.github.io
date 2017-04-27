@@ -240,7 +240,7 @@
 			</div>
 			<div class="fieldset">
 				<label>CEP*:</label>
-				<input type="text" pattern="[0-9]{8}" maxlength="8" name="cep" required>
+				<input type="text" pattern="[0-9]{8}" maxlength="8" name="cep" id="cep" required placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
 			</div>
 
 			<button class="botao">adicionar</button>
@@ -285,6 +285,7 @@
 </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/scripts/jquery.maskedinput.min.js"></script>
 <script src="/scripts/menu.js"></script>
 
 

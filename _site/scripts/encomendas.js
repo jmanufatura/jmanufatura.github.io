@@ -13,6 +13,7 @@ $(document).ready(function(){
 		$('body').toggleClass('fixo');
 		$('#adicionar-endereco').removeClass('cep-invalido');
 	});
+	$("#cep").mask("99999-999");
 });
 
 function validarCep() {
