@@ -43,12 +43,17 @@ $('#validar-cep').on('submit', function () {
 		$("#cep-popup").val(x);
 		$('#adicionar-endereco').toggleClass('aberto');
 		$('body').toggleClass('fixo');
-		$('#adicionar-endereco').removeClass('cep-invalido');
 		return false;
 	} else {
 	    $('#cep-invalido').addClass('aberto');
 	    return false;
 	}
+});
+
+$('#novo-local').on('submit', function () {
+	$('#adicionar-endereco').toggleClass('aberto');
+	$('body').toggleClass('fixo');
+	return false;
 });
 
 function buscarnaFabrica() {
