@@ -68,7 +68,7 @@
 		}
 		.opcoes {
 			p {
-				text-align: left;
+				text-align: right;
 				margin-bottom: 10px;
 				&:last-child {
 					margin-bottom: 0;
@@ -86,18 +86,62 @@
     	justify-content: flex-end;
     	margin-bottom: 76px;
 	}
-	#locais {
+	#receber-em-casa {
 		display: flex;
 	    flex-wrap: wrap;
 	    justify-content: space-between;
-	    #novo-local {
+	    position: relative;
+	    overflow: visible;
+	    &.aberto {
+			#opcoes-entrega {
+		    	height: auto;
+		    }
+		   .checkbox {
+		    	background-color: $azul-escuro;
+		    }
+	    }
+	    .checkbox {
+	    	cursor: pointer;
+	    	box-sizing: content-box;
+	    	position: absolute;
+	    	width: 10px;
+	    	height: 10px;
+	    	border-radius: 50%;
+	    	top: 3px;
+	    	left: -40px;
+	    	border: 1px solid $azul-escuro;
+	    }
+	    #opcoes-entrega {
+	    	height: 0;
+	    	transition: max-height .5s ease-in-out;
+	    }
+	    #validar-cep {
 	    	margin-bottom: 24px;
+	    	.fieldset {
+	    		display: inline-flex;
+	    		input, label {
+		    		margin-bottom: 0;
+		    		font-size: 15px;
+				    line-height: 22px;
+		    	}
+		    	input {
+		    		border-bottom: 1px solid $azul-escuro;
+		    		margin-left: 6px;
+		    		margin-right: 18px;
+		    		width: 90px;
+		    		text-align: center;
+		    	}
+	    	}
 	    }
 		.local {
 			padding: 25px;
 			border: 1px solid $amarelo-claro;
 			background-color: $branco;
 			margin-bottom: 30px;
+			cursor: pointer;
+			&:hover {
+				background-color: $amarelo-transparente;
+			}
 			&:last-child {
 				margin-bottom: 44px;
 			}
@@ -110,16 +154,44 @@
 				background-color: $amarelo-claro;
 			}
 		}
+		#data-entrega, #horario-entrega {
+			display: block;
+			width: 100%;
+			margin-bottom: 22px;
+			text-align: right;
+			&:last-child {
+				margin-bottom: 46px;
+			}
+			.valor {
+				min-width: 118px;
+				border-bottom: 1px solid $azul-escuro;
+				display: inline-flex;
+				justify-content: center;
+				cursor: pointer;
+			}
+		}
 	}
 	#buscar {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 27px;
+		position: relative;
+	    overflow: visible;
+	    &::before {
+	    	content: '';
+	    	position: absolute;
+	    	width: 10px;
+	    	height: 10px;
+	    	border-radius: 50%;
+	    	top: 3px;
+	    	left: -40px;
+	    	border: 1px solid $azul-escuro;
+	    }
 	}
 	#total {
 		display: flex;
 		flex-wrap: nowrap;
-		justify-content: space-between;
+		justify-content: flex-end;
 		margin-bottom: 33px;
 		h6 {
 			margin-bottom: 0;
@@ -132,7 +204,7 @@
 	}
 }
 
-#adicionar-endereco {
+#adicionar-endereco, #escolher-data, #cep-invalido {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -141,24 +213,16 @@
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity .25s ease-in-out;
+	@media#{$phone} {
+		align-items: flex-start;
+		padding-top: 72px;
+	}
 	&.aberto {
 		pointer-events: all;
 		opacity: 1;
 		.popup {
 			opacity: 1;
 			transition: opacity .25s linear .25s;
-		}
-	}
-	&.cep-invalido {
-		.popup {
-			.alerta {
-				height: auto;
-				opacity: 1;
-			}
-			.formulario {
-				height: 0;
-				opacity: 0;
-			}
 		}
 	}
 	.fundo {
@@ -169,10 +233,19 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
+		position: fixed;
+		top: 0;
+		left: 0;
 	}
 	.popup {
 		opacity: 0;
 		background-color: $amarelo-claro;
+	}
+}
+
+#cep-invalido {
+
+	.popup {
 		padding-left: 52px;
 		padding-right: 52px;
 		padding-top: 44px;
@@ -182,8 +255,8 @@
 			flex-wrap: wrap;
 		    flex-flow: column wrap;
 		    align-items: center;
-		    height: 0;
-			opacity: 0;
+		    height: auto;
+			opacity: 1;
 			transition: opacity .2s ease-in-out, height .4s ease-in-out .2s;
 			p {
 				text-align: center;
@@ -201,6 +274,28 @@
 				border: none;
 			}
 		}
+		h6 {
+			text-align: center;
+			margin-bottom: 37px;
+		}
+		.botao {
+			border: 1px solid $branco;
+			margin-top: 40px;
+			min-width: 108px;
+		}
+	}
+}
+
+#adicionar-endereco {
+	.popup {
+		padding-left: 52px;
+		padding-right: 52px;
+		padding-top: 44px;
+		padding-bottom: 44px;
+		@media#{$phone} {
+			padding-left: $phoneGutter/2;
+			padding-right: $phoneGutter/2;
+		}
 		.formulario {
 			display: flex;
 			justify-content: center;
@@ -216,6 +311,10 @@
 		.fieldset {
 			width: 100%;
 			display: flex;
+			@media#{$phone} {
+				flex-wrap: wrap;
+				margin-bottom: 15px;
+			}
 			label {
 				flex-shrink: 0;
 				margin-right: 10px;
@@ -253,4 +352,112 @@
 			min-width: 108px;
 		}
 	}
+}
+
+#container-calendario {
+  background-color: #fff1b6;
+  padding-top: 56px;
+  padding-bottom: 35px;
+  #calendario {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    max-width: calc(100% - #{$phoneGutter});
+    font-family: 'Questrial', sans-serif;
+    color: #002831;
+    #calendario_header, #calendario_semana, #calendario_conteudo {
+      position: relative;
+    }
+
+    #calendario_semana div, #calendario_conteudo div {
+      width: percentage(1/7);
+      text-align: center;
+    }
+
+    #calendario_header {
+      width: 100%;
+      text-align: center;
+      background-color: #fff1b6;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      h6 {
+        font-family: 'HurmeGeometric', sans-serif;
+        font-feature-settings: "swsh" 1;
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      #mes-proximo, #mes-anterior {
+        font-family: 'HurmeGeometric', sans-serif;
+        font-size: 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        width: percentage(1/7);
+        &:focus {
+          outline-width: 0;
+        }
+      }
+    }
+
+    #calendario_semana {
+      display: flex;
+      div {
+        text-transform: lowercase;
+        font-size: 14px;
+        height: 25px;
+      }
+    }
+
+    #calendario_conteudo {
+      height: 300px;
+      margin-bottom: 52px;
+      .dia {
+        float: left;
+        box-sizing: border-box;
+        height: 50px;
+        span {
+          font-size: 15px;
+          line-height: 20px;
+          height: 20px;
+          width: 28px;
+          display: inline-block;
+          margin-top: 15px;
+        }
+        &:not(.vazio) {
+          cursor: pointer;
+          &:hover {
+            span {
+              background-color: rgba(255, 255, 255, .75); 
+            }
+          }
+        }
+        &.hoje {
+          span {
+            border: 1px solid #002831;
+          }
+        }
+        &.passado, &.hoje {
+          cursor: default;
+          span {
+            opacity: .25;
+            background-color: transparent;
+          }
+          &:hover {
+            span {
+              background-color: transparent;
+            }
+          }
+        }
+        &.vazio {}
+      }
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 18px;
+    margin: 0;
+  }
 }
