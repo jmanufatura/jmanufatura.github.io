@@ -1,7 +1,9 @@
 <footer class="phone-0">
+	{% unless page.permalink == "/encomendas" or page.permalink == "/minha-conta" %}
 	<div class="wrapper" id="despedida">
 		<p class="phone-4 tablet-12">O bolo já acabou, mas a conversa continuou.</p>
 	</div>
+	{% endunless %}
 	<div class="wrapper" id="info">
 		<div class="tablet-left-2 tablet-10 desktop-left-4 desktop-8">
 			<div class="subwrapper justify-tablet justify-desktop justify-large">

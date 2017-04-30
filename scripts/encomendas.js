@@ -1,8 +1,12 @@
 $(document).ready(function(){
 
-	$('#data-entrega .valor').click(function(){
-		$('#escolher-data').toggleClass('aberto');
+	$('#data_entrega').click(function(){
+		$('#escolher_data').toggleClass('aberto');
 		$('body').toggleClass('fixo');
+	});
+
+	$('#horario-entrega').click(function(){
+		$('#horario-entrega .dropdown').toggleClass('aberto');
 	});
 
 	$('#opcoes-entrega .local').click(function(){
@@ -10,23 +14,29 @@ $(document).ready(function(){
 		$(this).addClass('selecionado');
 	});
 
-	$('#receber-em-casa .checkbox').click(function(){
-		$('#receber-em-casa').toggleClass('aberto');
+	$('#receber-em-casa .selecionar').click(function(){
+		$('#receber-em-casa').addClass('aberto');
+		$('#buscar').removeClass('aberto');
 	});
 
+	$('#buscar .selecionar').click(function(){
+		buscarnaFabrica();
+	});
+
+
 	$('#adicionar-endereco .fundo').click(function(){
-		$('#adicionar-endereco').toggleClass('aberto');
-		$('body').toggleClass('fixo');
+		$('#adicionar-endereco').removeClass('aberto');
+		$('body').removeClass('fixo');
 	});
 
 	$('#cep-invalido .fundo').click(function(){
-		$('#cep-invalido').toggleClass('aberto');
-		$('body').toggleClass('fixo');
+		$('#cep-invalido').removeClass('aberto');
+		$('body').removeClass('fixo');
 	});
 
-	$('#escolher-data .fundo').click(function(){
-		$('#escolher-data').toggleClass('aberto');
-		$('body').toggleClass('fixo');
+	$('#escolher_data .fundo').click(function(){
+		$('#escolher_data').removeClass('aberto');
+		$('body').removeClass('fixo');
 	});
 
 	$('#adicionar-endereco .fechar').click(function(){
@@ -36,10 +46,14 @@ $(document).ready(function(){
 
 });
 
-$('#validar-cep').on('submit', function () {
-    var x = document.forms["validarCep"]["cepNovo"].value;
+$('#validar-cep').on('click', function () {
+    validarCep();
+});
+
+function validarCep() {
+	var x = $('#cep_novo').val();
+    console.log(x);
 	if ( (x >= 70000000 && x <= 72799999) || (x >= 73000000 && x <= 73699999) ) {
-		console.log(x);
 		$("#cep-popup").val(x);
 		$('#adicionar-endereco').toggleClass('aberto');
 		$('body').toggleClass('fixo');
@@ -48,7 +62,7 @@ $('#validar-cep').on('submit', function () {
 	    $('#cep-invalido').addClass('aberto');
 	    return false;
 	}
-});
+}
 
 $('#novo-local').on('submit', function () {
 	$('#adicionar-endereco').toggleClass('aberto');
@@ -57,8 +71,9 @@ $('#novo-local').on('submit', function () {
 });
 
 function buscarnaFabrica() {
- 	$('#adicionar-endereco').toggleClass('aberto');
-	$('body').toggleClass('fixo');
-	$('#adicionar-endereco').removeClass('cep-invalido');
+ 	$('#buscar').addClass('aberto');
+	$('#receber-em-casa').removeClass('aberto');
+	$('#cep-invalido').removeClass('aberto');
+	$('body').removeClass('fixo');
  	return false;
 }

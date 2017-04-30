@@ -3,6 +3,13 @@
 
 @charset "utf-8";
 
+@import
+	"variaveis",
+	"cores",
+	"tipografia",
+	"menu"
+;
+
 html {
 	font-size: 150%;
 }
@@ -30,7 +37,7 @@ iframe {
 }
 
 form {
-	input, textarea, button {
+	input, textarea, button, select {
 		&:focus {
 			outline-width: 0;
 		}
@@ -41,9 +48,35 @@ img {
 	width: 100%;
 }
 
-@import
-	"variaveis",
-	"cores",
-	"tipografia",
-	"menu"
-;
+main {
+	.botao {
+		font-size: 13px;
+		line-height: 26px;
+		min-width: 196px;
+		height: 26px;
+		border: 1px solid $preto;
+		display: inline-flex;
+		justify-content: center;
+		text-align: center;
+		font-family: 'HurmeGeometric', sans-serif;
+		padding-left: $desktopGutter/2;
+		padding-right: $desktopGutter/2;
+		cursor: pointer;
+	}
+	.local {
+		padding: 25px;
+		margin-bottom: 30px;
+		cursor: pointer;
+		&:last-child {
+			margin-bottom: 44px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 22px;
+			margin-bottom: 0;
+		}
+		&.selecionado {
+			border: 1px solid $preto;
+		}
+	}
+}

@@ -173,7 +173,7 @@
 					text-align: center;
 				}
 				p {
-					text-align: justify;
+					text-align: left;
 					&.grande {
 						margin-bottom: 25px;
 						text-align: center;
@@ -269,6 +269,7 @@
 		width: 33.333%;
 		margin-left: 0;
 		background-color: $roxo-claro;
+		border: none;
 	}
 }
 

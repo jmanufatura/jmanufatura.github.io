@@ -9,7 +9,7 @@ body {
 }
 
 .negativo {
-	h1, h2, h3, h4, h5, h6, label, p, figcaption, input, textarea, button, li, a {
+	h1, h2, h3, h4, h5, h6, label, p, figcaption, input, select, textarea, button, li, a {
 		color: $branco;
 	}
 }
@@ -61,7 +61,7 @@ h6 {
 	text-align: left;
 }
 
-label, p, figcaption, input, li, textarea {
+label, p, figcaption, input, select, li, textarea {
 	font-family: 'Questrial', sans-serif;
 	color: $azul-escuro;
 }
@@ -79,7 +79,15 @@ label, p, figcaption, input, li, textarea {
     color:    #999;
 }
 
-p, label {
+select {
+	border-radius: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+ 	background-color: transparent;
+ 	text-align-last: center;
+}
+
+p, label, select, input {
 	font-size: 16px;
 	line-height: 20px;
 	margin-bottom: 11px;
@@ -94,6 +102,5 @@ p, label {
 
 .botao {
 	font-size: 14px;
-	line-height: 49px;
 	font-family: 'HurmeGeometric', sans-serif;
 }

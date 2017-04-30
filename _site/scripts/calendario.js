@@ -2,14 +2,27 @@ var prazo = 2;
 
 $( function() {
 
-  var ano;
-  var mes;
-  var dias_mes = [];
   var agora = new Date();
   var hoje = agora.getDate();
   var mes_atual = agora.getMonth();
   var ano_atual = agora.getFullYear();
-  var x = diasmesAtual();
+  var dias_mes_atual = diasmesAtual();
+
+  // defaults:
+
+  var dia = agora.getDate();
+  var ano = agora.getFullYear();
+  var mes = agora.getMonth();
+  var dias_mes = dias_mes_atual;
+
+  if ( hoje + prazo >= dias_mes.length ){
+    var data_selecionada = 'dia_' + (prazo - (dias_mes.length - hoje) + 1) + '_' + (mes_atual + 2) + '_' + ano;
+    var dia_selecionado = (prazo - (dias_mes.length - hoje) + 1);
+    mes = mes + 2;
+  } else {
+    var data_selecionada = 'dia_' + (hoje + prazo + 1) + '_' + (mes_atual + 1) + '_' + ano;
+    var dia_selecionado = hoje + prazo + 1;
+  }
   
   var meses = [
     "Janeiro",
@@ -45,70 +58,91 @@ $( function() {
   function construirCalendario() {
     
     construirSemana();
-
     
-    var dia = 0;
+    var dia_semana = 0;
     var calendario = false;
-    conteudo.empty();
 
     var dias_mes = diasMes();
 
-    var dias_restantes = dias_mes.length - hoje - prazo;
+    conteudo.empty();
+
+    var dias_restantes = dias_mes.length - dia - prazo;
     
     while( !calendario ) {
-      if ( dias[dia] == dias_mes[0].weekday ) {
+      if ( dias[dia_semana] == dias_mes[0].weekday ) {
         calendario = true
       } else {
-        conteudo.append('<div class="dia vazio"><span></span></div>');
-        dia++
+        conteudo.append('<div class="vazio"><span></span></div>');
+        dia_semana++
       }
     }
     
-    for ( var i = 0; i < 42-dia; i++ ) {
+    for ( var i = 0; i < 42 - dia_semana; i++ ) {
 
       if ( i >= dias_mes.length ) {
-        conteudo.append('<div class="dia vazio"><span></span></div>')
+        conteudo.append('<div class="vazio"><span></span></div>')
       } 
 
       else {
         var v = dias_mes[i].day;
 
         if ( ano < ano_atual ) {
-          var m = '<div class="dia passado"><span>';
+          var m = '<div class="dia indisponivel" id="';
         } else if ( ano > ano_atual ) {
-          var m = '<div class="dia"><span>';
+          var m = '<div class="dia" id="';
         } else {
-          if ( mes < mes_atual + 1) {
-            var m = '<div class="dia passado"><span>';
-          } else if ( mes > mes_atual + 1) {
-            var m = '<div class="dia"><span>';
+          if ( hoje + prazo >= dias_mes_atual.length && mes <= (mes_atual + 2) && v <= (prazo - (dias_mes_atual.length - hoje))) {
+            var m = '<div class="dia indisponivel" id="';
           } else {
-            if ( v < hoje + prazo ) {
-              if ( v == hoje ) {
-                var m = '<div class="dia hoje "><span>';
-              } else {
-                var m = '<div class="dia passado "><span>';
+            if ( mes < mes_atual + 1) {
+              var m = '<div class="dia indisponivel" id="';
+            } else if ( mes > mes_atual + 1) {
+              var m = '<div class="dia" id="';
+            } else {
+              if ( v < dia + prazo + 1 ) {
+                if ( v == hoje ) {
+                  var m = '<div class="dia hoje indisponivel" id="';
+                } else {
+                  var m = '<div class="dia indisponivel " id="';
+                }
+              } else if ( v > dia + prazo ) {
+                var m = '<div class="dia" id="';
               }
-            } else if ( v > hoje + prazo ) {
-              var m = '<div class="dia"><span>';
             }
           }
         }
-        conteudo.append( m + "" + v + "</span></div>" )
+        conteudo.append( m + "dia" + "_" + v + "_" + mes + "_" + ano + '"><span>' + v + '</span></div>' )
       }
     }
 
-    if (dias_restantes > 0 ) {
-      header.find( "h6" ).text( meses[mes-1] + ", " + ano );
-    } else {
-      header.find( "h6" ).text( meses[mes] + ", " + ano );
-    }
+    header.find( "h6" ).text( meses[mes-1] + ", " + ano );
+
+    $('#' + data_selecionada).addClass('selecionado');
+
+     $('#data_entrega').val(dia_selecionado + '.' + mes + '.' + ano );
+
+    $('#calendario_conteudo .dia:not(.indisponivel)').on("click",function() {
+
+      data_selecionada = $(this).attr('id');
+      dia_selecionado = $('span', this).html();
+
+      $('#data_entrega').val(dia_selecionado + '.' + mes + '.' + ano );
+      $('#escolher_data').removeClass('aberto');
+      $('body').removeClass('fixo');
+
+      $('#calendario_conteudo .dia').removeClass('selecionado');
+      $(this).addClass('selecionado');
+
+    });
     
   }
 
   function diasmesAtual() {
-    var now = new Date();
-    return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+    var dias_mes_atual = [];
+    for ( var i = 1; i < v(ano_atual,mes_atual); i++ ) {
+      dias_mes_atual.push( { day : i } )
+    }
+    return dias_mes_atual;
   }
   
   function diasMes() {
@@ -145,26 +179,24 @@ $( function() {
   function y(dias_mes) {
     return dias_mes.getFullYear() + "/" + ( dias_mes.getMonth() + 1 ) + "/" + dias_mes.getDate();
   }
-  
-  function b() {
-    var dias_mes = new Date;
-    ano = dias_mes.getFullYear();
-    mes = dias_mes.getMonth() + 1
-  }
-  
-  b();
-  construirCalendario();
-  if ( x - hoje - prazo < 1 ) {
-    console.log('eita');
+
+  var dias_mes = new Date;
+  ano = dias_mes.getFullYear();
+  mes = dias_mes.getMonth() + 1;
+
+  if ( hoje + prazo >= dias_mes_atual.length ){
+    console.log('sem mais entregas esse mês.');
     mes++;
     if (mes > 12) {
       mes = 1;
       ano++;
     }
     construirCalendario();
+  } else {
+    construirCalendario();
   }
   
-  header.find('#mes-anterior').on("click",function() {
+  header.find('#mes_anterior').on("click",function() {
     mes--;
     if (mes < 1) {
       mes = 12;
@@ -174,7 +206,7 @@ $( function() {
     return false;
   });
 
-  header.find('#mes-proximo').on("click",function() {
+  header.find('#mes_proximo').on("click",function() {
     mes++;
     if (mes > 12) {
       mes = 1;

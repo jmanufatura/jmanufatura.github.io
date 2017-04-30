@@ -1,18 +1,31 @@
 #menu {
 
-	flex-wrap: nowrap;
-	justify-content: space-between;
 	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: $branco;
 	z-index: 999;
+
+	.itens_desktop {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.botao {
+		line-height: 49px;
+	}
+
 	@media #{$phone} {
 		height: 72px;
 	}
 
 	#home-phone {
-		margin: auto;
+		position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    align-self: center;
 		img {
 			height: 36px;
 			width: auto;

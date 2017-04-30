@@ -15,7 +15,6 @@
 		line-height: 26px;
 		min-width: 107px;
 		height: 26px;
-		border: 1px solid $roxo-claro;
 		display: inline-flex;
 		justify-content: center;
 		text-align: center;
@@ -31,17 +30,42 @@
 		padding-top: 52px;
 		padding-bottom: 39px;
 	}
+
+	#detalhes, #meus_enderecos, #minhas_encomendas {
+		margin-top: 80px;
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    .fieldset:last-of-type {
+	    	margin-bottom: 44px;
+	    }
+	}
+
 	h1, h6 {
 		text-align: center;
 	}
 	h1 {
-		margin-bottom: 79px;
+		margin-bottom: 0;
 	}
 	
 	h6 {
 		text-align: center;
 		margin-bottom: 37px;
 	}
+
+	.local {
+		cursor: default;
+
+		background-color: $roxo-claro;
+		border: 1px solid $roxo-claro;
+		&:hover {
+			background-color: $roxo-claro;
+		}
+		&.selecionado {
+			background-color: $roxo-claro;
+		}
+	}
+
 	.formulario {
 		display: flex;
 		justify-content: center;

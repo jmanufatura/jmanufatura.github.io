@@ -1,5 +1,49 @@
 <header class="wrapper" id="menu">
+	
+	<div class="itens_desktop">
+		<a class="item element mobile-0" ><span class="botao-menu">história</span></a>
+		<a class="item element mobile-0" href="/produtos"><span class="botao-menu">bolos &amp; produtos</span></a>
+		<a class="item element mobile-0" href="/eventos"><span class="botao-menu">eventos</span></a>
+		<a class="item element mobile-0" href="/pontos-de-venda"><span class="botao-menu">pontos de venda</span></a>
+		<a class="item element mobile-0" ><span class="botao-menu">entregas</span></a>
+		<a class="item element mobile-0" ><span class="botao-menu">contato</span></a>
+		<nav class="item element mobile-0" id="botao-encomendar">
+			<span class="botao-menu">encomende aqui (0)</span>
+			<div id="menu-dropdown">
+				<div class="wrapper" id="vitrine">
+					<a href="" class="desktop-1" id="produto-anterior"></a>
+					<div class="desktop-10">
+						<div class="subwrapper">
 
+							{% include thumb-header.html
+								nome="O bolo da ivone"
+								id="o-bolo-da-ivone"
+							%}
+
+							{% include thumb-header.html
+								nome="Mini-cupcake"
+								id="mini-cupcake"
+							%}
+
+							{% include thumb-header.html
+								nome="Bolo no pote"
+								id="bolo-no-pote"
+							%}
+
+							{% include thumb-header.html
+								nome="O bolo da ivone"
+								id="o-bolo-da-ivone"
+							%}
+
+						</div>
+
+					</div>
+					<a href="" class="desktop-1" id="produto-proximo"></a>
+				</div>
+				<div class="wrapper botao" id="ver-encomendas"><a class="desktop-12" href="/encomendas">ver minhas encomendas →</a></div>
+			</div>
+		</nav>
+	</div>
 	<a id="icone-menu" class="tablet-0 desktop-0 large-0">
 		<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		    <g id="Phone" stroke="#002831" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -11,49 +55,6 @@
 	</a>
 	<a href="/" id="home-phone" class="tablet-0 desktop-0 large-0"><img src="/img/simbolo.svg"></a>
 	<a href="/" id="cesta" class="tablet-0 desktop-0 large-0"><img src="/img/cesta.svg"></a>
-
-	<a class="item element mobile-0" ><span class="botao-menu">história</span></a>
-	<a class="item element mobile-0" href="/produtos"><span class="botao-menu">bolos &amp; produtos</span></a>
-	<a class="item element mobile-0" href="/eventos"><span class="botao-menu">eventos</span></a>
-	<a class="item element mobile-0" href="/pontos-de-venda"><span class="botao-menu">pontos de venda</span></a>
-	<a class="item element mobile-0" ><span class="botao-menu">entregas</span></a>
-	<a class="item element mobile-0" ><span class="botao-menu">contato</span></a>
-	<nav class="item element mobile-0" id="botao-encomendar">
-		<span class="botao-menu">encomende aqui (0)</span>
-		<div id="menu-dropdown">
-			<div class="wrapper" id="vitrine">
-				<a href="" class="desktop-1" id="produto-anterior"></a>
-				<div class="desktop-10">
-					<div class="subwrapper">
-
-						{% include thumb-header.html
-							nome="O bolo da ivone"
-							id="o-bolo-da-ivone"
-						%}
-
-						{% include thumb-header.html
-							nome="Mini-cupcake"
-							id="mini-cupcake"
-						%}
-
-						{% include thumb-header.html
-							nome="Bolo no pote"
-							id="bolo-no-pote"
-						%}
-
-						{% include thumb-header.html
-							nome="O bolo da ivone"
-							id="o-bolo-da-ivone"
-						%}
-
-					</div>
-
-				</div>
-				<a href="" class="desktop-1" id="produto-proximo"></a>
-			</div>
-			<div class="wrapper botao" id="ver-encomendas"><a class="desktop-12" href="/encomendas">ver minhas encomendas →</a></div>
-		</div>
-	</nav>
 </header>
 
 <nav class="wrapper" id="botao-home">
